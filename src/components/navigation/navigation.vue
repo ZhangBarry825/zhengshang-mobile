@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div v-if="propD" class="placeholder"></div>
     <div class="navigation" :class="coloura?'navigationasd':''">
       <div class="head" :class="unfold?'headasdad':''">
         <img :src="coloura?logo1:unfold?logo1:logo0" alt />
@@ -80,7 +81,6 @@
         </div>
       </transition>
     </div>
-    <!-- <div class="placeholder"></div> -->
   </div>
 </template>
 
@@ -89,6 +89,10 @@ export default {
   name: 'navigation',
   props: {
     colour: Boolean,
+    propD: {
+      type: Boolean,
+      default: false   //默认值
+    },
   },
   data () {
 
