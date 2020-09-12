@@ -23,6 +23,22 @@ const routes = [
     path: '/customerCasedetails',
     name: 'customerCasedetails',
     component: () => import('../views/customerCase/customerCasedetails')
+
+  },
+  {
+    path: '/caseArea',
+    name: 'CaseArea',
+    component: () => import('../views/case/CaseArea')
+  },
+  {
+    path: '/newsList',
+    name: 'NewsList',
+    component: () => import('../views/news/NewsList')
+  },
+  {
+    path: '/newsDetail',
+    name: 'NewsDetail',
+    component: () => import('../views/news/NewsDetail')
   },
 ]
 

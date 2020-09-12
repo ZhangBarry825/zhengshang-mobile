@@ -336,7 +336,10 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.handleScroll)
+    if(!this.coloura){
+      window.addEventListener('scroll', this.handleScroll)
+    }
+
   },
   //组件
   components: {
