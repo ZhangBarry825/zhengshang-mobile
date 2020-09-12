@@ -20,6 +20,11 @@ const routes = [
     component: () => import('../views/case/CaseArea')
   },
   {
+    path: '/caseArea/govCloud',
+    name: 'GovCloud',
+    component: () => import('../views/case/list/GovCloud')
+  },
+  {
     path: '/newsList',
     name: 'NewsList',
     component: () => import('../views/news/NewsList')

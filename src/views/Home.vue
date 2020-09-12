@@ -214,7 +214,7 @@ export default {
 <style scoped lang="scss">
 .home {
   .swiper-box {
-    background-image: url('../assets/images/swipe-back.png');
+    background-image: url('../assets/images/swipe-back.gif');
     @include back-img-center;
     height: 850px;
 
