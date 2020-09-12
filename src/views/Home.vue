@@ -206,7 +206,7 @@ export default {
   methods: {},
   components: {
     navigation,
-    PageFooter
+    PageFooter,
   }
 }
 </script>
