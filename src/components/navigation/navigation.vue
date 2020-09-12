@@ -1,9 +1,12 @@
 <template>
   <div>
     <div class="navigation" :style="'background-color:'+colour?'#ffffff':'rgba(0, 0, 0,0)'">
-      <div class="head">
-        <img src="../../assets/images/logo1.png" alt />
-        <img @click="expandAndClose" :src="unfold?menu2:menu1" alt />
+      <div class="head" :class="unfold?'headasdad':''">
+        <img :src="showMap?logo1:unfold?logo1:logo0" alt />
+        <img @click="expandAndClose" :src="showMap?unfold?menu2:menu1:unfold?menu2:menu4" alt />
+        <!-- menu1//黑三行
+        menu2//黑差
+        menu4//白三行-->
       </div>
       <transition name="fade">
         <div v-if="unfold" class="list">
@@ -77,7 +80,7 @@
         </div>
       </transition>
     </div>
-    <div class="placeholder"></div>
+    <!-- <div class="placeholder"></div> -->
   </div>
 </template>
 
@@ -85,12 +88,17 @@
 export default {
   name: 'navigation',
   props: {
-    colour: Boolean
+    colour: Boolean,
+    showMap: Boolean
   },
   data () {
+
     return {
-      menu1: require('../../assets/images/menu-btnhei.png'),
-      menu2: require('../../assets/images/menu-btn1.png'),
+      menu1: require('../../assets/images/menu-btnhei.png'),//黑三行
+      menu2: require('../../assets/images/menu-btn1.png'), //黑差
+      menu4: require('../../assets/images/menu-btn0.png'),//白三行
+      logo1: require('../../assets/images/logo1.png'),
+      logo0: require('../../assets/images/logo0.png'),
       unfold: false,
       activeNames: 0,
       activeName: 0,
@@ -298,10 +306,12 @@ export default {
   },
   //生命周期函数
   created () {
+    console.log(this.colour)
   },
   //方法
   methods: {
     expandAndClose () {
+      console.log("00000000")
       this.unfold = !this.unfold
     },
     change (e) {
@@ -331,6 +341,10 @@ export default {
   top: 0;
   width: 750px;
   height: 128px;
+  z-index: 9999999999;
+  .headasdad {
+    background-color: #fff;
+  }
   .head {
     width: 750px;
     height: 128px;
@@ -431,6 +445,7 @@ export default {
 .placeholder {
   height: 128px;
   width: 750px;
+  background-color: rgba(148, 99, 99, 0);
 }
 ::v-deep .titdsdaldsdae {
   font-size: 30px;
