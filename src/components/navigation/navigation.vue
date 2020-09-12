@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="navigation" :style="'background-color:'+colour?'#ffffff':'rgba(0, 0, 0,0)'">
+    <div class="navigation" :class="colour?'navigationasd':''">
       <div class="head" :class="unfold?'headasdad':''">
-        <img :src="showMap?logo1:unfold?logo1:logo0" alt />
-        <img @click="expandAndClose" :src="showMap?unfold?menu2:menu1:unfold?menu2:menu4" alt />
+        <img :src="colour?logo1:unfold?logo1:logo0" alt />
+        <img @click="expandAndClose" :src="colour?unfold?menu2:menu1:unfold?menu2:menu4" alt />
         <!-- menu1//黑三行
         menu2//黑差
         menu4//白三行-->
@@ -89,7 +89,6 @@ export default {
   name: 'navigation',
   props: {
     colour: Boolean,
-    showMap: Boolean
   },
   data () {
 
@@ -334,6 +333,9 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.navigationasd {
+  background-color: #fff;
 }
 .navigation {
   position: fixed;
