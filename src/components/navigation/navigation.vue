@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="navigation" :class="colour?'navigationasd':''">
+    <div class="navigation" :class="coloura?'navigationasd':''">
       <div class="head" :class="unfold?'headasdad':''">
-        <img :src="colour?logo1:unfold?logo1:logo0" alt />
-        <img @click="expandAndClose" :src="colour?unfold?menu2:menu1:unfold?menu2:menu4" alt />
+        <img :src="coloura?logo1:unfold?logo1:logo0" alt />
+        <img @click="expandAndClose" :src="coloura?unfold?menu2:menu1:unfold?menu2:menu4" alt />
         <!-- menu1//黑三行
         menu2//黑差
         menu4//白三行-->
@@ -300,11 +300,13 @@ export default {
             },
           ]
         }
-      ]
+      ],
+      coloura: false
     }
   },
   //生命周期函数
   created () {
+    this.coloura = this.colour
     console.log(this.colour)
   },
   //方法
@@ -318,7 +320,19 @@ export default {
     },
     changegg (e) {
       this.titdsid = e
+    },
+    handleScroll () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
+      this.coloura = scrollTop > 0 ? true : false;  // 如果滚动到顶部了，this.isFixed就为true
+
+      //   window.onscroll = function () {
+      //     var sl = -Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
+      //     document.getElementById('fixed').style.left = sl + 'px';
+      //   }
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
   },
   //组件
   components: {
@@ -336,6 +350,7 @@ export default {
 }
 .navigationasd {
   background-color: #fff;
+  transition: all 0.5s;
 }
 .navigation {
   position: fixed;
@@ -346,6 +361,7 @@ export default {
   z-index: 9999999999;
   .headasdad {
     background-color: #fff;
+    transition: all 0.5s;
   }
   .head {
     width: 750px;
