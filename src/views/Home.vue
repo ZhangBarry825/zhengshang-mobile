@@ -3,7 +3,7 @@
     <navigation :colour="false" :showMap="false"></navigation>
     <div class="swiper-box">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-        <van-swipe-item class="swipe-item" v-for="(item,index) in 4" :key="index">
+        <van-swipe-item class="swipe-item" v-for="(item,index) in 4">
           <div class="center">
             <div class="line1">专业的互联网方案解决专家</div>
             <div class="line2">以互联网定制开发为主营业务，专注微信服务号、企业号、微信公众平台开发和微信小程序等的微信开发服务，全方位满足企业个性化需求</div>
@@ -165,6 +165,31 @@
         </div>
       </div>
     </div>
+    <div class="partner">
+      <div class="title">合作伙伴</div>
+      <div class="items">
+        <div
+          class="item"
+          v-for="(item,index) in 9"
+          :class="'item active-partner'+index"
+          :style="'background-image: url('+require('../assets/images/pt'+(index+1)+'.png')+')'"
+        ></div>
+      </div>
+    </div>
+    <div class="about">
+      <div class="title">关于我们</div>
+      <div class="image" :style="'background-image: url('+require('../assets/images/us.png')+')'"></div>
+      <div
+        class="text"
+      >郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</div>
+      <div
+        class="text"
+      >我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会，不断精进，团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨，以高效而良好的服务为客户切实节约成本、创造价值。</div>
+      <div class="more">
+        <div class="more-text">了解更多</div>
+        <img src="../assets/images/more1.png" alt />
+      </div>
+    </div>
     <PageFooter></PageFooter>
   </div>
 </template>
@@ -180,9 +205,8 @@ export default {
   },
   methods: {},
   components: {
-    PageFooter,
     navigation,
-
+    PageFooter
   }
 }
 </script>
@@ -257,7 +281,7 @@ export default {
       width: 100%;
       text-align: center;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 600;
       color: #333333;
       padding: 50px 0;
       box-sizing: border-box;
@@ -320,7 +344,7 @@ export default {
       width: 100%;
       text-align: center;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 600;
       color: #333333;
       padding: 50px 0;
       box-sizing: border-box;
@@ -374,7 +398,7 @@ export default {
       width: 100%;
       text-align: center;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 600;
       color: #ffffff;
       padding: 50px 0;
       box-sizing: border-box;
@@ -454,7 +478,7 @@ export default {
       width: 100%;
       text-align: center;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 600;
       color: #333333;
       padding: 50px 0;
       box-sizing: border-box;
@@ -515,7 +539,7 @@ export default {
       width: 100%;
       text-align: center;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 600;
       color: #333333;
       padding: 50px 0;
       box-sizing: border-box;
@@ -554,22 +578,24 @@ export default {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: #ffffff;
     background-image: url('../assets/images/news.png');
-    padding: 30px;
+    background-color: #f4f5f8;
+    padding: 0 30px;
     box-sizing: border-box;
     @include back-img-center;
+    background-position: top center;
     background-size: 100%;
     .title {
       width: 100%;
       text-align: center;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 600;
       color: #ffffff;
       padding: 50px 0;
       box-sizing: border-box;
     }
     .items {
+      margin-top: 50px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -628,6 +654,92 @@ export default {
             @include line-hidden(3);
           }
         }
+      }
+    }
+  }
+
+  .partner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #f4f5f8;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 600;
+      color: #333333;
+      padding: 50px 0;
+      box-sizing: border-box;
+    }
+    .items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-bottom: 30px;
+      .item {
+        width: 226px;
+        height: 140px;
+        background: #ffffff;
+        border: 1px solid #dce8fe;
+        @include back-img-center;
+        background-size: 90%;
+      }
+    }
+  }
+
+  .about {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 600;
+      color: #333333;
+      padding: 50px 0;
+      box-sizing: border-box;
+    }
+    .image {
+      width: 100%;
+      height: 383px;
+      @include back-img-center;
+    }
+    .text {
+      margin-top: 20px;
+      text-indent: 2em;
+      font-size: 24px;
+      font-weight: 400;
+      color: #333333;
+      line-height: 40px;
+    }
+    .more {
+      margin: 80px auto;
+
+      width: 212px;
+      height: 80px;
+      border: 2px solid #004ce5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .more-text {
+        font-size: 24px;
+        font-weight: 400;
+        color: #004ce5;
+        line-height: 26px;
+      }
+      img {
+        margin-left: 10px;
+        width: 38px;
       }
     }
   }
