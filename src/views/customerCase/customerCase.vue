@@ -12,7 +12,12 @@
       <van-tabs color="#FF6A00">
         <van-tab v-for="index in 8" :title="'标签 ' + index" :key="index">
           <div class="list">
-            <div class="item" v-for="(item, index) in tabs" :key="index">
+            <div
+              class="item"
+              v-for="(item, index) in tabs"
+              :key="index"
+              @click="$router.push({path: '/customerCasedetails',query: {name: '张三',id: 1,}})"
+            >
               <div>
                 <img :src="item.img" alt />
               </div>

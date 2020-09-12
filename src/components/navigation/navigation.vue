@@ -336,7 +336,7 @@ export default {
     }
   },
   mounted () {
-    if(!this.coloura){
+    if (!this.coloura) {
       window.addEventListener('scroll', this.handleScroll)
     }
 
