@@ -1,1 +1,17 @@
-$theme-color: red;
+@mixin page-style{
+  width: 100%;
+  min-height: 100%;
+}
+
+@mixin line-hidden($line:1){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+@mixin back-img-center{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
