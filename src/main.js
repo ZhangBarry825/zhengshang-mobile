@@ -20,6 +20,11 @@ import 'lib-flexible'
 
 Vue.use(Vant);
 
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  ak: 'b0nN1SLy6xKgqtT07XkAgVGMVMdqaUyZ'
+})
+
 new Vue({
   router,
   store,

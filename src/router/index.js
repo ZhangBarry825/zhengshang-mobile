@@ -31,6 +31,11 @@ const routes = [
     component: () => import('../views/case/CaseArea')
   },
   {
+    path: '/caseArea/govCloud',
+    name: 'GovCloud',
+    component: () => import('../views/case/list/GovCloud')
+  },
+  {
     path: '/newsList',
     name: 'NewsList',
     component: () => import('../views/news/NewsList')
@@ -43,8 +48,19 @@ const routes = [
   {
     path: '/appCustom',
     name: 'appCustom',
-    component: () => import('../views/appCustom/appCustom')
+    component: () => import('../views/case/appCustom')
+
   },
+  {
+    path: '/systemInte',
+    name: 'systemInte',
+    component: () => import('../views/case/systemInte')
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/contact/Contact')
+  }
 ]
 
 const router = new VueRouter({
