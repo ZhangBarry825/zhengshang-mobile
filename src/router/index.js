@@ -46,6 +46,17 @@ const routes = [
     component: () => import('../views/news/NewsDetail')
   },
   {
+    path: '/appCustom',
+    name: 'appCustom',
+    component: () => import('../views/case/appCustom')
+
+  },
+  {
+    path: '/systemInte',
+    name: 'systemInte',
+    component: () => import('../views/case/systemInte')
+  },
+  {
     path: '/contact',
     name: 'Contact',
     component: () => import('../views/contact/Contact')
@@ -65,6 +76,7 @@ const routes = [
     name: 'MiniProgram',
     component: () => import('../views/case/list/MiniProgram')
   },
+
 ]
 
 const router = new VueRouter({
