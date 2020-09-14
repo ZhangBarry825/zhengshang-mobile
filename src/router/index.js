@@ -40,6 +40,11 @@ const routes = [
     name: 'NewsDetail',
     component: () => import('../views/news/NewsDetail')
   },
+  {
+    path: '/appCustom',
+    name: 'appCustom',
+    component: () => import('../views/appCustom/appCustom')
+  },
 ]
 
 const router = new VueRouter({
