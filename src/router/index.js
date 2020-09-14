@@ -50,6 +50,21 @@ const routes = [
     name: 'Contact',
     component: () => import('../views/contact/Contact')
   },
+  {
+    path: '/caseArea/things',
+    name: 'Things',
+    component: () => import('../views/case/list/Things')
+  },
+  {
+    path: '/caseArea/website',
+    name: 'WebSite',
+    component: () => import('../views/case/list/WebSite')
+  },
+  {
+    path: '/caseArea/mini-program',
+    name: 'MiniProgram',
+    component: () => import('../views/case/list/MiniProgram')
+  },
 ]
 
 const router = new VueRouter({
