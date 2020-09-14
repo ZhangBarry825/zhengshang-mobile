@@ -361,7 +361,6 @@ export default {
 }
 .navigation {
   position: fixed;
-  left: 0;
   top: 0;
   width: 750px;
   height: 128px;
@@ -383,8 +382,8 @@ export default {
       height: 84px;
     }
     > img:nth-child(2) {
-      width: 40px;
-      height: 33px;
+      width: 52px;
+      height: 34px;
     }
   }
 
