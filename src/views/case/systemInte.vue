@@ -325,7 +325,7 @@
         <div class="itemas">
           <div>
             <p>
-              <img src="../../assets/images/systemInte/anquan.png" alt />
+              <img src="../../assets/images/systemInte/dsjsjas1.png" alt />
             </p>
             <p>程序使用培训</p>
           </div>
@@ -334,27 +334,27 @@
         <div class="itemas">
           <div>
             <p>
-              <img src="../../assets/images/systemInte/anquan.png" alt />
+              <img src="../../assets/images/systemInte/dsjsjas2.png" alt />
             </p>
-            <p>程序使用培训</p>
+            <p>项目问题咨询</p>
           </div>
           <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
         </div>
         <div class="itemas">
           <div>
             <p>
-              <img src="../../assets/images/systemInte/anquan.png" alt />
+              <img src="../../assets/images/systemInte/dsjsjas3.png" alt />
             </p>
-            <p>程序使用培训</p>
+            <p>项目部署及维护</p>
           </div>
           <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
         </div>
         <div class="itemas">
           <div>
             <p>
-              <img src="../../assets/images/systemInte/anquan.png" alt />
+              <img src="../../assets/images/systemInte/dsjsjas4.png" alt />
             </p>
-            <p>程序使用培训</p>
+            <p>后期功能升级和修改</p>
           </div>
           <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
         </div>
@@ -657,6 +657,7 @@ export default {
         margin-top: 70px;
         width: 100%;
         padding: 0 57px;
+        box-sizing: border-box;
         > div:nth-child(1) {
           display: flex;
           > p:nth-child(1) {
