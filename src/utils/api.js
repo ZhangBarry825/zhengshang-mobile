@@ -15,3 +15,11 @@ export function postTest (data) {
         data
     })
 }
+
+export function getHomeData (data) {
+    return request({
+        url: '/index/index/index',
+        method: 'get',
+        params: data
+    })
+}

@@ -3,10 +3,10 @@
     <navigation :colour="false"></navigation>
     <div class="swiper-box">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-        <van-swipe-item class="swipe-item" v-for="(item,index) in 4">
+        <van-swipe-item class="swipe-item" v-for="(item,index) in bannnerList">
           <div class="center">
-            <div class="line1">专业的互联网方案解决专家</div>
-            <div class="line2">以互联网定制开发为主营业务，专注微信服务号、企业号、微信公众平台开发和微信小程序等的微信开发服务，全方位满足企业个性化需求</div>
+            <div class="line1">{{item.title}}</div>
+            <div class="line2">{{item.content}}</div>
             <div class="line3">
               <div class="text">了解更多</div>
               <img src="../assets/images/more0.png" alt />
@@ -55,24 +55,11 @@
       <div class="items">
         <div
           class="item"
-          :style="'background-image: url('+require('../assets/images/solution1.png')+')'"
+          v-for="(item,index) in solution"
+          :style="'background-image: url('+item.img+')'"
         >
-          <div class="line1">直播平台解决方案</div>
-          <div class="line2">拍摄直播、PPT直播、桌面共享直播，传播简单快捷、时效高、受众广，助理商家高效流量变现</div>
-        </div>
-        <div
-          class="item"
-          :style="'background-image: url('+require('../assets/images/solution2.png')+')'"
-        >
-          <div class="line1">教育平台解决方案</div>
-          <div class="line2">拍摄直播、PPT直播、桌面共享直播，传播简单快捷、时效高、受众广，助理商家高效流量变现</div>
-        </div>
-        <div
-          class="item"
-          :style="'background-image: url('+require('../assets/images/solution3.png')+')'"
-        >
-          <div class="line1">社区团购解决方案</div>
-          <div class="line2">拍摄直播、PPT直播、桌面共享直播，传播简单快捷、时效高、受众广，助理商家高效流量变现</div>
+          <div class="line1">{{item.title}}</div>
+          <div class="line2">{{item.content}}</div>
         </div>
       </div>
     </div>
@@ -150,17 +137,17 @@
     <div class="news">
       <div class="title">新闻中心</div>
       <div class="items">
-        <div :class="'item active-news'+index" v-for="(item,index) in 4" :key="index">
+        <div :class="'item active-news'+index" v-for="(item,index) in news" :key="index">
           <div class="left">
             <div
               class="img"
-              :style="'background-image: url('+require('../assets/images/news0.png')+')'"
+              :style="'background-image: url('+item.img+')'"
             ></div>
           </div>
           <div class="right">
-            <div class="line1">2C互联网还有机会么？</div>
-            <div class="line2">2020-05-08</div>
-            <div class="line3">“资本寒冬”四个字从2018年开始贯穿到了天，2020年初又因为疫情的影响...</div>
+            <div class="line1">{{item.title}}</div>
+            <div class="line2">{{item.ctime}}</div>
+            <div class="line3">{{item.remark}}</div>
           </div>
         </div>
       </div>
@@ -170,21 +157,17 @@
       <div class="items">
         <div
           class="item"
-          v-for="(item,index) in 9"
+          v-for="(item,index) in partner"
           :class="'item active-partner'+index"
-          :style="'background-image: url('+require('../assets/images/pt'+(index+1)+'.png')+')'"
+          :style="'background-image: url('+item.img+')'"
         ></div>
       </div>
     </div>
     <div class="about">
       <div class="title">关于我们</div>
-      <div class="image" :style="'background-image: url('+require('../assets/images/us.png')+')'"></div>
+      <div class="image" :style="'background-image: url('+aboutus.img+')'"></div>
       <div
-        class="text"
-      >郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</div>
-      <div
-        class="text"
-      >我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会，不断精进，团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨，以高效而良好的服务为客户切实节约成本、创造价值。</div>
+        class="text">{{aboutus.content}}</div>
       <div class="more">
         <div class="more-text">了解更多</div>
         <img src="../assets/images/more1.png" alt />
@@ -197,16 +180,40 @@
 <script>
 import navigation from '../components/navigation/navigation'
 import PageFooter from "../components/page-footer/PageFooter";
+import {getHomeData} from "../utils/api";
 
 export default {
   name: 'Home',
-  data () {
-    return {};
-  },
-  methods: {},
   components: {
     navigation,
     PageFooter,
+  },
+
+  data () {
+    return {
+      bannnerList:[],
+      solution:[],
+      news:[],
+      partner:[],
+      aboutus: {
+        img:'',
+        title:''
+      },
+    };
+  },
+  methods: {
+    async fetchData(){
+      let res = await getHomeData()
+      console.log(res.data)
+      this.bannnerList=res.data.carousel
+      this.solution=res.data.solution
+      this.news=res.data.news
+      this.partner=res.data.partner
+      this.aboutus=res.data.aboutus
+    },
+  },
+  created() {
+    this.fetchData()
   }
 }
 </script>
@@ -716,11 +723,12 @@ export default {
     }
     .text {
       margin-top: 20px;
-      text-indent: 2em;
+      /*text-indent: 2em;*/
       font-size: 24px;
       font-weight: 400;
       color: #333333;
       line-height: 40px;
+      white-space: pre-line;
     }
     .more {
       margin: 80px auto;
