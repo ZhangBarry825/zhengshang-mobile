@@ -30,7 +30,20 @@ export default {
   data () {
     return {
       Footer: {},
-      companys: []
+      companys: [
+        {
+          name: '',
+          place: ''
+        },
+        {
+          name: '',
+          place: ''
+        },
+        {
+          name: '',
+          place: ''
+        },
+      ]
     }
   },
   //生命周期函数

@@ -11,7 +11,7 @@
       </div>
       <transition name="fade">
         <div v-if="unfold" class="list">
-          <div class="home van">首页</div>
+          <div class="home van" @click="jumpLink('/')">首页</div>
           <div class="business">
             <van-collapse
               v-for="(item, index) in navig"
@@ -37,7 +37,11 @@
                     :border="false"
                   >
                     <div :class="'arrangement'+itema.row">
-                      <p v-for="(items, indexs) in itema.subclass" :key="indexs">{{items.text}}</p>
+                      <p
+                        v-for="(items, indexs) in itema.subclass"
+                        @click="jumpLink(items.Link)"
+                        :key="indexs"
+                      >{{items.text}}</p>
                     </div>
                   </van-collapse-item>
                 </van-collapse>
@@ -118,28 +122,36 @@ export default {
               id: 2,
               subclass: [
                 {
-                  text: '社交'
+                  text: '社交',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '直播'
+                  text: '直播',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '团购'
+                  text: '团购',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '交友'
+                  text: '交友',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '教育'
+                  text: '教育',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '医疗'
+                  text: '医疗',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '跑腿'
+                  text: '跑腿',
+                  Link: '/appCustom'
                 },
                 {
-                  text: '外卖'
+                  text: '外卖',
+                  Link: '/appCustom'
                 },
               ]
             },
@@ -149,22 +161,28 @@ export default {
               id: 3,
               subclass: [
                 {
-                  text: '展示小程序'
+                  text: '展示小程序',
+                  Link: '/caseArea/mini-program'
                 },
                 {
-                  text: '平台直播'
+                  text: '平台直播',
+                  Link: '/caseArea/mini-program'
                 },
                 {
-                  text: '商城小程序'
+                  text: '商城小程序',
+                  Link: '/caseArea/mini-program'
                 },
                 {
-                  text: '相亲交友'
+                  text: '相亲交友',
+                  Link: '/caseArea/mini-program'
                 },
                 {
-                  text: '社区团购'
+                  text: '社区团购',
+                  Link: '/caseArea/mini-program'
                 },
                 {
-                  text: '其他'
+                  text: '其他',
+                  Link: '/caseArea/mini-program'
                 },
               ]
             },
@@ -174,16 +192,20 @@ export default {
               id: 4,
               subclass: [
                 {
-                  text: '企业官网'
+                  text: '企业官网',
+                  Link: '/caseArea/website'
                 },
                 {
-                  text: '行业门户'
+                  text: '行业门户',
+                  Link: '/caseArea/website'
                 },
                 {
-                  text: '社区论坛'
+                  text: '社区论坛',
+                  Link: '/caseArea/website'
                 },
                 {
-                  text: '电商网站'
+                  text: '电商网站',
+                  Link: '/caseArea/website'
                 }
               ]
             },
@@ -193,19 +215,24 @@ export default {
               id: 5,
               subclass: [
                 {
-                  text: 'ERP企业管理系统'
+                  text: 'ERP企业管理系统',
+                  Link: '/systemInte'
                 },
                 {
-                  text: 'CRM客户管理系统'
+                  text: 'CRM客户管理系统',
+                  Link: '/systemInte'
                 },
                 {
-                  text: '报表管理系统'
+                  text: '报表管理系统',
+                  Link: '/systemInte'
                 },
                 {
-                  text: '日程管理系统'
+                  text: '日程管理系统',
+                  Link: '/systemInte'
                 },
                 {
-                  text: '项目管理系统'
+                  text: '项目管理系统',
+                  Link: '/systemInte'
                 }
               ]
             },
@@ -315,6 +342,17 @@ export default {
   },
   //方法
   methods: {
+    jumpLink (Link) {
+      console.log(Link, this.$router.history.current.fullPath)
+      if (Link == this.$router.history.current.fullPath) {
+        this.unfold = !this.unfold
+        return
+      }
+      this.$router.push({
+        path: Link,
+        query: {}
+      })
+    },
     expandAndClose () {
       console.log("00000000")
       this.unfold = !this.unfold
@@ -323,6 +361,7 @@ export default {
       this.titds = e
     },
     changegg (e) {
+      console.log(e)
       this.titdsid = e
     },
     handleScroll () {
