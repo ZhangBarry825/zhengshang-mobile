@@ -116,12 +116,30 @@
 <script>
     import navigation from "../../components/navigation/navigation";
     import PageFooter from "../../components/page-footer/PageFooter";
+    import {getCaseArea} from "../../utils/api";
 
     export default {
         name: "CaseArea",
         components: {
             navigation,
             PageFooter,
+        },
+        data(){
+            return{
+                dataDetail:{
+
+                }
+            }
+        },
+        methods:{
+            async fetchData(){
+                let res= await getCaseArea()
+                console.log(res.data)
+                this.dataDetail=res.data
+            }
+        },
+        created() {
+            this.fetchData()
         }
     }
 </script>

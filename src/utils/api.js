@@ -61,3 +61,11 @@ export function getAboutUs (data) {
         params: data
     })
 }
+
+export function getCaseArea (data) {
+    return request({
+        url: '/index/business/index',
+        method: 'get',
+        params: data
+    })
+}
