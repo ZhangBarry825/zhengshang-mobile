@@ -20,6 +20,15 @@ import 'lib-flexible'
 
 Vue.use(Vant);
 
+Vue.prototype.$dia = ()=>{
+  var form = document.createElement('form');
+  form.action = 'https://live02.wasnnznyy.com/chat/chat/rRRLt%40AwGdSzybKiEGFYfA%24%24?lng=cn';
+  form.target = '_blank';
+  form.method = 'POST';
+  document.body.appendChild(form);
+  form.submit();
+};
+
 import BaiduMap from 'vue-baidu-map'
 Vue.use(BaiduMap, {
   ak: 'b0nN1SLy6xKgqtT07XkAgVGMVMdqaUyZ'

@@ -7,7 +7,7 @@
           <div class="center">
             <div class="line1">{{item.title}}</div>
             <div class="line2">{{item.content}}</div>
-            <div class="line3">
+            <div class="line3" @click="openDialog">
               <div class="text">了解更多</div>
               <img src="../assets/images/more0.png" alt />
             </div>
@@ -173,6 +173,23 @@
         <img src="../assets/images/more1.png" alt />
       </div>
     </div>
+
+    <transition name="fade">
+      <div class="center-dialog" v-show="showCenterDialog">
+        <div class="dialog-box">
+          <img class="dialog-back" src="../assets/images/dialog-b.png" alt="">
+          <img @click="showCenterDialog=false" class="close-dialog" src="../assets/images/cccc.png" alt="">
+          <div class="center-text">
+            <div class="line1">您好，欢迎来到正尚网络，</div>
+            <div class="line2">请问有什么可以帮您？</div>
+            <div class="line3">
+              <div class="btn1" @click="showCenterDialog=false">稍后再说</div>
+              <div class="btn2" @click="openDialog">现在咨询</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
     <PageFooter></PageFooter>
   </div>
 </template>
@@ -191,6 +208,7 @@ export default {
 
   data () {
     return {
+      showCenterDialog: false,
       bannnerList:[],
       solution:[],
       news:[],
@@ -199,6 +217,7 @@ export default {
         img:'',
         title:''
       },
+      timer: '',
     };
   },
   methods: {
@@ -214,9 +233,26 @@ export default {
     goNewsDetail(id){
       this.$router.push('/newsDetail?id='+id)
     },
+    openDialog() {
+      this.$dia()
+    },
+    autoAlertDialog() {
+      this.timer = setInterval(() => {
+        this.open()
+      }, 30000)
+    },
+    open() {
+      this.showCenterDialog = true
+      clearInterval(this.timer)
+      this.autoAlertDialog()
+    },
   },
   created() {
     this.fetchData()
+  },
+  mounted() {
+    //咨询弹窗 30s
+    this.autoAlertDialog()
   }
 }
 </script>
@@ -249,7 +285,7 @@ export default {
               text-align: center;
               font-size: 14px;
               color: #ffffff;
-              padding: 30px 20px;
+              margin: 30px 20px;
               box-sizing: border-box;
               opacity: 0.8;
               @include line-hidden(3);
@@ -753,6 +789,93 @@ export default {
         width: 38px;
       }
     }
+  }
+
+  .center-dialog {
+    z-index: 5;
+    position: fixed;
+    top: 20%;
+    left: calc(50% - 250px);
+    border-radius: 4px;
+    overflow: hidden;
+
+    .dialog-box {
+      width: 500px;
+      height: 496px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .dialog-back {
+        position: absolute;
+        width: 100%;
+      }
+
+      .close-dialog {
+        cursor: pointer;
+        position: absolute;
+        right: 40px;
+        top: 170px;
+        width:50px;
+      }
+
+      .center-text {
+        z-index: 5;
+        height: 270px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .line1 {
+          font-size: 24px;
+          color: #ffffff;
+        }
+
+        .line2 {
+          margin-top: 20px;
+          font-size: 28px;
+          color: #ffffff;
+          letter-spacing: 2px;
+        }
+
+        .line3 {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          margin-top: 50px;
+
+          .btn1 {
+            cursor: pointer;
+            font-size: 20px;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 50px;
+            padding: 15px 40px;
+          }
+
+          .btn2 {
+            cursor: pointer;
+            font-size: 20px;
+            color: #014ce5;
+            background-color: #ffffff;
+            border-radius: 50px;
+            padding: 15px 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    opacity: 0;
   }
 }
 </style>

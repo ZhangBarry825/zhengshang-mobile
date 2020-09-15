@@ -69,3 +69,12 @@ export function getCaseArea (data) {
         params: data
     })
 }
+
+export function getGovCloud (data) {
+    return request({
+        url: '/index/cloud/get_carousel',
+        method: 'get',
+        params: data
+    })
+}
+

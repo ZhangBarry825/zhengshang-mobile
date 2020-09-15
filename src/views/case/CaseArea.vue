@@ -8,102 +8,90 @@
         <div class="items">
             <div class="item item1">
                 <div class="image">
-                    <img src="../../assets/images/case1.png" alt="">
+                    <img :src="dataDetail.datalist[0].img" alt="">
                 </div>
                 <div class="title">
-                    <div class="line1">APP开发</div>
+                    <div class="line1">{{dataDetail.datalist[0].title}}</div>
                     <div class="line2"></div>
-                    <div class="line3">以互联网定制开发为主营业务，各行业APP开发，包括直播类、短视频、社区配送、生活商城、在线教育等</div>
+                    <div class="line3">{{dataDetail.datalist[0].remark}}</div>
                 </div>
-                <div class="content-item">1、多渠道预热，蓄水前置流量</div>
-                <div class="content-item">2、多渠道预热，蓄水前置流量，多渠道预</div>
-                <div class="content-item">3、多渠道预热，蓄水前置流量，多渠道预热，蓄水前 置流</div>
-                <div class="more">
+                <div class="content-item" v-for="(item,index) in dataDetail.datalist[0].content">{{item}}</div>
+                <div class="more" @click="goDetail(1)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
                 </div>
             </div>
             <div class="item item2">
                 <div class="image">
-                    <img src="../../assets/images/case2.png" alt="">
+                    <img :src="dataDetail.datalist[1].img" alt="">
                 </div>
                 <div class="title">
-                    <div class="line1">小程序开发</div>
+                    <div class="line1">{{dataDetail.datalist[1].title}}</div>
                     <div class="line2"></div>
-                    <div class="line3">以互联网定制开发为主营业务，各行业APP开发，包括直播类、短视频、社区配送、生活商城、在线教育等</div>
+                    <div class="line3">{{dataDetail.datalist[1].remark}}</div>
                 </div>
-                <div class="content-item">1、多渠道预热，蓄水前置流量</div>
-                <div class="content-item">2、多渠道预热，蓄水前置流量，多渠道预</div>
-                <div class="content-item">3、多渠道预热，蓄水前置流量，多渠道预热，蓄水前 置流</div>
-                <div class="more">
+                <div class="content-item" v-for="(item,index) in dataDetail.datalist[1].content">{{item}}</div>
+                <div class="more" @click="goDetail(2)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
                 </div>
             </div>
             <div class="item item3">
                 <div class="image">
-                    <img src="../../assets/images/case3.png" alt="">
+                    <img :src="dataDetail.datalist[2].img" alt="">
                 </div>
                 <div class="title">
-                    <div class="line1">网站建设</div>
+                    <div class="line1">{{dataDetail.datalist[2].title}}</div>
                     <div class="line2"></div>
-                    <div class="line3">以互联网定制开发为主营业务，各行业APP开发，包括直播类、短视频、社区配送、生活商城、在线教育等</div>
+                    <div class="line3">{{dataDetail.datalist[2].remark}}</div>
                 </div>
-                <div class="content-item">1、多渠道预热，蓄水前置流量</div>
-                <div class="content-item">2、多渠道预热，蓄水前置流量，多渠道预</div>
-                <div class="content-item">3、多渠道预热，蓄水前置流量，多渠道预热，蓄水前 置流</div>
-                <div class="more">
+                <div class="content-item" v-for="(item,index) in dataDetail.datalist[2].content">{{item}}</div>
+                <div class="more" @click="goDetail(3)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
                 </div>
             </div>
             <div class="item item4">
                 <div class="image">
-                    <img src="../../assets/images/case4.png" alt="">
+                    <img :src="dataDetail.datalist[3].img" alt="">
                 </div>
                 <div class="title">
-                    <div class="line1">系统集成</div>
+                    <div class="line1">{{dataDetail.datalist[3].title}}</div>
                     <div class="line2"></div>
-                    <div class="line3">以互联网定制开发为主营业务，各行业APP开发，包括直播类、短视频、社区配送、生活商城、在线教育等</div>
+                    <div class="line3">{{dataDetail.datalist[3].remark}}</div>
                 </div>
-                <div class="content-item">1、多渠道预热，蓄水前置流量</div>
-                <div class="content-item">2、多渠道预热，蓄水前置流量，多渠道预</div>
-                <div class="content-item">3、多渠道预热，蓄水前置流量，多渠道预热，蓄水前 置流</div>
-                <div class="more">
+                <div class="content-item" v-for="(item,index) in dataDetail.datalist[3].content">{{item}}</div>
+                <div class="more" @click="goDetail(4)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
                 </div>
             </div>
             <div class="item item5">
                 <div class="image">
-                    <img src="../../assets/images/case5.png" alt="">
+                    <img :src="dataDetail.datalist[4].img" alt="">
                 </div>
                 <div class="title">
-                    <div class="line1">物联网</div>
+                    <div class="line1">{{dataDetail.datalist[4].title}}</div>
                     <div class="line2"></div>
-                    <div class="line3">以互联网定制开发为主营业务，各行业APP开发，包括直播类、短视频、社区配送、生活商城、在线教育等</div>
+                    <div class="line3">{{dataDetail.datalist[4].remark}}</div>
                 </div>
-                <div class="content-item">1、多渠道预热，蓄水前置流量</div>
-                <div class="content-item">2、多渠道预热，蓄水前置流量，多渠道预</div>
-                <div class="content-item">3、多渠道预热，蓄水前置流量，多渠道预热，蓄水前 置流</div>
-                <div class="more">
+                <div class="content-item" v-for="(item,index) in dataDetail.datalist[4].content">{{item}}</div>
+                <div class="more" @click="goDetail(5)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
                 </div>
             </div>
             <div class="item item6">
                 <div class="image">
-                    <img src="../../assets/images/case6.png" alt="">
+                    <img :src="dataDetail.datalist[5].img" alt="">
                 </div>
                 <div class="title">
-                    <div class="line1">政务云</div>
+                    <div class="line1">{{dataDetail.datalist[5].title}}</div>
                     <div class="line2"></div>
-                    <div class="line3">以互联网定制开发为主营业务，各行业APP开发，包括直播类、短视频、社区配送、生活商城、在线教育等</div>
+                    <div class="line3">{{dataDetail.datalist[5].remark}}</div>
                 </div>
-                <div class="content-item">1、多渠道预热，蓄水前置流量</div>
-                <div class="content-item">2、多渠道预热，蓄水前置流量，多渠道预</div>
-                <div class="content-item">3、多渠道预热，蓄水前置流量，多渠道预热，蓄水前 置流</div>
-                <div class="more">
+                <div class="content-item" v-for="(item,index) in dataDetail.datalist[5].content">{{item}}</div>
+                <div class="more" @click="goDetail(6)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
                 </div>
@@ -127,11 +115,78 @@
         data(){
             return{
                 dataDetail:{
-
+                    datalist:[
+                        {
+                            content:[
+                                '','',''
+                            ],
+                            img:'',
+                            remark:'',
+                            title:''
+                        },
+                        {
+                            content:[
+                                '','',''
+                            ],
+                            img:'',
+                            remark:'',
+                            title:''
+                        },
+                        {
+                            content:[
+                                '','',''
+                            ],
+                            img:'',
+                            remark:'',
+                            title:''
+                        },
+                        {
+                            content:[
+                                '','',''
+                            ],
+                            img:'',
+                            remark:'',
+                            title:''
+                        },
+                        {
+                            content:[
+                                '','',''
+                            ],
+                            img:'',
+                            remark:'',
+                            title:''
+                        },
+                        {
+                            content:[
+                                '','',''
+                            ],
+                            img:'',
+                            remark:'',
+                            title:''
+                        },
+                    ]
                 }
             }
         },
         methods:{
+            goDetail(index){
+                if(index==1){
+                    this.$router.push('/appCustom')
+                }else if(index==2){
+                    this.$router.push('/caseArea/mini-program')
+                }else if(index==3){
+                    this.$router.push('/caseArea/website')
+                }else if(index==4){
+                    this.$router.push('/systemInte')
+                }else if(index==5){
+                    this.$router.push('/caseArea/things')
+                }else if(index==6){
+                    this.$router.push('/caseArea/govCloud')
+                }else {
+                    this.$router.push('/')
+                }
+
+            },
             async fetchData(){
                 let res= await getCaseArea()
                 console.log(res.data)
