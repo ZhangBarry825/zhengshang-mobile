@@ -3,11 +3,11 @@
         <navigation :colour="false"></navigation>
         <div class="swiper-box">
             <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-                <van-swipe-item class="swipe-item" v-for="(item,index) in 3">
+                <van-swipe-item class="swipe-item" v-for="(item,index) in dataDetail"  :style="'background-image: url('+item.img+');'">
                     <div class="center">
-                        <div class="line1">互联网+政务服务平台</div>
+                        <div class="line1">{{item.title}}</div>
                         <div class="line2">
-                            正尚科技已经为超过40个城市提供了智慧政务核心解决方案，并成为超过100个各级行政服务中心的软件供应商和服务商，已经形成领先市场的权力阳光、政务审批、政务服务、电子监察软件系统的产业群
+                            {{item.content}}
                         </div>
                         <div class="line3">
                             <div class="text">立即咨询</div>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
             </div>
-            <div class="more" >
+            <div class="more" @click="$router.push('/caseArea')">
                 <div class="text">了解更多</div>
                 <img class="more1" src="../../../assets/images/more1.png" alt />
             </div>
@@ -164,6 +164,7 @@
 <script>
     import navigation from '../../../components/navigation/navigation'
     import PageFooter from "../../../components/page-footer/PageFooter";
+    import {getGovCloud} from "../../../utils/api";
 
     export default {
         name: "GovCloud",
@@ -246,8 +247,19 @@
                         title:'旅游局系统',
                         description:'推进移动办公平台建设，裁用信息化手段管理上级单位管理文件；实现行政管理工作规范化；协同各业务管理系统，提高工作效率，辅助工作人员快速掌握和分析业务数据，对旅游管理工作做出快速反应'
                     }
-                ]
+                ],
+                dataDetail:[]
             }
+        },
+        methods:{
+            async fetchData(){
+                let res =await getGovCloud()
+                console.log(res.data)
+                this.dataDetail=res.data
+            }
+        },
+        created() {
+            this.fetchData()
         }
     }
 </script>
@@ -257,8 +269,7 @@
         .swiper-box {
             width: 100%;
             height: 750px;
-            background-image: url("../../../assets/images/gov.png");
-            @include back-img-center;
+
 
             .my-swipe {
                 height: 100%;
@@ -266,6 +277,7 @@
                 .van-swipe__track {
 
                     .swipe-item {
+                        @include back-img-center;
                         .center {
                             display: flex;
                             flex-direction: column;

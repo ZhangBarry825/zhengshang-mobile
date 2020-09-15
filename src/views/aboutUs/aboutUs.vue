@@ -13,7 +13,7 @@
         <p>
           <img src="../../assets/images/aboutUs/team1.png" alt />
         </p>
-        <p>{{dataDetail.config.first}}年项目开发经验</p>
+        <p>{{dataDetail.config.first}}年项目经验</p>
       </div>
       <div>
         <p>
@@ -225,6 +225,8 @@ export default {
     justify-content: space-between;
     background-color: #fff;
     div {
+      margin-top: -30px;
+      width: 33.33%;
       > p:nth-child(1) {
         width: 146px;
         height: 138px;
@@ -232,10 +234,13 @@ export default {
         > img {
           width: 146px;
           height: 138px;
+          transform: scale(.9);
         }
       }
       > p:nth-child(2) {
-        font-size: 24px;
+        width: 100%;
+        text-align: center;
+        font-size: 28px;
         font-family: AlibabaPuHuiTi;
         font-weight: 400;
         color: #333333;
