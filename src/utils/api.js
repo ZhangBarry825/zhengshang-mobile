@@ -15,6 +15,20 @@ export function postTest (data) {
         data
     })
 }
+// export function postTest (data) {
+//     return request({
+//         url: '/sys/user/login',
+//         method: 'post',
+//         data
+//     })
+// }
+
+// 底部信息
+export function bottomInfoapi (data) {
+    return request({
+        url: '/index/footer/get_config',
+    })
+}
 
 export function getHomeData (data) {
     return request({
