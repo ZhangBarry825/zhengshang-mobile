@@ -16,34 +16,34 @@
       </van-swipe>
     </div>
     <div class="our-service">
-      <div class="title">行业解决方案</div>
+      <div class="title ">行业解决方案</div>
       <div class="items">
-        <div class="item">
+        <div class="item active-left">
           <img src="../assets/images/service1.png" alt />
           <div class="line1">APP开发</div>
           <div class="line2">商城、交友、教育、赛事、直播、生活服务，您的创业蓝图，我们帮您实现</div>
         </div>
-        <div class="item">
+        <div class="item active-right">
           <img src="../assets/images/service2.png" alt />
           <div class="line1">小程序开发</div>
           <div class="line2">小程序、公众号、微信营销一站式全系息服务，为您抢占微信流量红利</div>
         </div>
-        <div class="item">
+        <div class="item active-left">
           <img src="../assets/images/service3.png" alt />
           <div class="line1">网站建设</div>
           <div class="line2">企业网站、个人网站、展示型网站、推广型网站、高端定制型网站，为您量身打造企业互联网战略解决方案</div>
         </div>
-        <div class="item">
+        <div class="item active-right">
           <img src="../assets/images/service4.png" alt />
           <div class="line1">系统集成</div>
           <div class="line2">ERP、OA、CRM、HR、PRM多种管理系统开发，成熟架构，多种解决方案，尽在正尚科技</div>
         </div>
-        <div class="item">
+        <div class="item active-left">
           <img src="../assets/images/service5.png" alt />
           <div class="line1">物联网</div>
           <div class="line2">为企业和个人开发者提供智能硬件一体化解决方案</div>
         </div>
-        <div class="item">
+        <div class="item active-right">
           <img src="../assets/images/service6.png" alt />
           <div class="line1">政务云</div>
           <div class="line2">为政府行业提供基础设施、支撑软件、应用系统、信息资源、运行保障和信息安全等综合服务平台</div>
@@ -208,7 +208,7 @@ export default {
 
   data () {
     return {
-      showCenterDialog: false,
+      showCenterDialog: true,
       bannnerList:[],
       solution:[],
       news:[],
@@ -255,7 +255,12 @@ export default {
     this.autoAlertDialog()
     let that = this
 
-    that.$ami('.active-item', 0, 'top', '100%', .5, true)
+    // that.$nextTick(()=>{
+    //   that.$ami('.active-left', 0, 'left', '100%', .5, true)
+    //   that.$ami('.active-right', 0, 'right', '100%', .5, true)
+    //   that.$ami('.active-top', 0, 'top', '100%', .5, true)
+    //   that.$ami('.active-bottom', 0, 'bottom', '100%', .5, true)
+    // })
 
   }
 }
@@ -796,6 +801,7 @@ export default {
   }
 
   .center-dialog {
+    margin: 0 auto;
     z-index: 5;
     position: fixed;
     top: 20%;
