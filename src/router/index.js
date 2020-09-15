@@ -60,13 +60,41 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: () => import('../views/contact/Contact')
-  }
+  },
+  {
+    path: '/caseArea/things',
+    name: 'Things',
+    component: () => import('../views/case/list/Things')
+  },
+  {
+    path: '/caseArea/website',
+    name: 'WebSite',
+    component: () => import('../views/case/list/WebSite')
+  },
+  {
+    path: '/caseArea/mini-program',
+    name: 'MiniProgram',
+    component: () => import('../views/case/list/MiniProgram')
+  },
+
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  window.scrollTo(0,0)
+
+  if(routes.find((val)=>{
+    return val.path == to.path
+  })){
+    next()
+  }else {
+    next('/')
+  }
 })
 
 export default router

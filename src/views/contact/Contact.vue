@@ -82,7 +82,8 @@
 
 <script>
     import PageFooter from "../../components/page-footer/PageFooter";
-
+    import {contactUs} from "../../utils/api";
+    import { Dialog } from 'vant';
     export default {
         name: "Contact",
         components:{
@@ -123,14 +124,19 @@
                 let that = this
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        saveapi({ name: this.formData.name, mobile: this.formData.phone, remark: this.formData.description }).then(res => {
+                        contactUs({ name: this.formData.name, mobile: this.formData.phone, remark: this.formData.description }).then(res => {
+
                             if(res.code==1){
-                                that.$message({
-                                    message:'提交成功',
-                                    type:'success'
-                                })
+                                console.log(res)
+                                Dialog({
+                                    message: '提交成功！',
+                                    confirmButtonColor:'#FF7E00'
+                                });
                             }else {
-                                that.$message('提交错误')
+                                Dialog({
+                                    message: '提交错误',
+                                    confirmButtonColor:'#FF7E00'
+                                });
                             }
 
                             //console.log(res)

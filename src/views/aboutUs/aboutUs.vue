@@ -13,19 +13,19 @@
         <p>
           <img src="../../assets/images/aboutUs/team1.png" alt />
         </p>
-        <p>7年项目开发经验</p>
+        <p>{{dataDetail.config.first}}年项目开发经验</p>
       </div>
       <div>
         <p>
           <img src="../../assets/images/aboutUs/team2.png" alt />
         </p>
-        <p>78人技术团队</p>
+        <p>{{dataDetail.config.second}}人技术团队</p>
       </div>
       <div>
         <p>
           <img src="../../assets/images/aboutUs/team3.png" alt />
         </p>
-        <p>3000+合作客户</p>
+        <p>{{dataDetail.config.third}}+合作客户</p>
       </div>
     </div>
     <div class="introduction">
@@ -35,11 +35,10 @@
           <p>
             <img src="../../assets/images/aboutUs/uction.png" alt />
           </p>
-          <p>郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开</p>
+          <p>{{dataDetail.aboutus.content.slice(0,47)}}</p>
         </div>
         <p class="inton">
-          发、APP开发、OA办公系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。
-          <br />我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会，不断精进，团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨，以高效而良好的服务为客户切实节约成本、创造价值。
+          {{dataDetail.aboutus.content.slice(47)}}
         </p>
       </div>
     </div>
@@ -53,8 +52,8 @@
             </p>
           </div>
           <div>
-            <p>一流服务体验</p>
-            <p>尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</p>
+            <p>{{dataDetail.idea[0].key}}</p>
+            <p>{{dataDetail.idea[0].value}}</p>
           </div>
         </div>
         <div class="item">
@@ -64,8 +63,8 @@
             </p>
           </div>
           <div>
-            <p>一流服务体验</p>
-            <p>尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</p>
+            <p>{{dataDetail.idea[1].key}}</p>
+            <p>{{dataDetail.idea[1].value}}</p>
           </div>
         </div>
         <div class="item">
@@ -75,8 +74,8 @@
             </p>
           </div>
           <div>
-            <p>一流服务体验</p>
-            <p>尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</p>
+            <p>{{dataDetail.idea[2].key}}</p>
+            <p>{{dataDetail.idea[2].value}}</p>
           </div>
         </div>
         <div class="item">
@@ -86,8 +85,8 @@
             </p>
           </div>
           <div>
-            <p>一流服务体验</p>
-            <p>尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</p>
+            <p>{{dataDetail.idea[3].key}}</p>
+            <p>{{dataDetail.idea[3].value}}</p>
           </div>
         </div>
       </div>
@@ -96,25 +95,25 @@
       <h4>公司环境</h4>
       <div class="company">
         <div class="itema1">
-          <img src="../../assets/images/aboutUs/company1.png" alt />
+          <van-image  fit="cover" :src="dataDetail.environment.img1" alt />
         </div>
         <div class="itema2">
           <p>
-            <img src="../../assets/images/aboutUs/company2.png" alt />
+            <van-image  fit="cover" :src="dataDetail.environment.img2"  alt />
           </p>
           <p>
-            <img src="../../assets/images/aboutUs/company3.png" alt />
+            <van-image  fit="cover" :src="dataDetail.environment.img3"  alt />
           </p>
         </div>
         <div class="itema3">
-          <img src="../../assets/images/aboutUs/company4.png" alt />
+          <van-image  fit="cover" :src="dataDetail.environment.img4"  alt />
         </div>
         <div class="itema4">
           <p>
-            <img src="../../assets/images/aboutUs/company5.png" alt />
+            <van-image  fit="cover" :src="dataDetail.environment.img5"  alt />
           </p>
           <p>
-            <img src="../../assets/images/aboutUs/company6.png" alt />
+            <van-image  fit="cover" :src="dataDetail.environment.img6"  alt />
           </p>
         </div>
       </div>
@@ -125,19 +124,61 @@
 
 <script>
 import PageFooter from '../../components/page-footer/PageFooter'
+import {getAboutUs} from "../../utils/api";
 export default {
   name: 'aboutUs',
 
   data () {
     return {
-
+      dataDetail:{
+        config:{
+          first:0,
+          second:0,
+          third:0
+        },
+        aboutus:{
+          content:''
+        },
+        idea:[
+          {
+            key:'',
+            value:''
+          },
+          {
+            key:'',
+            value:''
+          },
+          {
+            key:'',
+            value:''
+          },
+          {
+            key:'',
+            value:''
+          },
+        ],
+        environment: {
+          img1:'',
+          img2:'',
+          img3:'',
+          img4:'',
+          img5:'',
+          img6:'',
+        }
+      }
     }
   },
   //生命周期函数
   created () {
+    this.fetchData()
   },
   //方法
   methods: {
+    async fetchData(){
+      let res= await getAboutUs()
+      console.log(res.data)
+      this.dataDetail=res.data
+    }
   },
   //组件
   components: {
@@ -249,6 +290,7 @@ export default {
         color: #333333;
         line-height: 48px;
         margin-top: 41px;
+        white-space: pre-line;
       }
     }
   }
@@ -349,7 +391,7 @@ export default {
         width: 690px;
         height: 320px;
         background: #000000;
-        > img {
+        > .van-image {
           width: 100%;
           height: 100%;
         }
@@ -361,7 +403,7 @@ export default {
         > p:nth-child(1) {
           width: 420px;
           height: 320px;
-          > img {
+          > .van-image {
             width: 100%;
             height: 100%;
           }
@@ -369,7 +411,7 @@ export default {
         > p:nth-child(2) {
           width: 250px;
           height: 320px;
-          > img {
+          > .van-image {
             width: 100%;
             height: 100%;
           }
@@ -379,7 +421,7 @@ export default {
         width: 690px;
         height: 320px;
         margin-top: 20px;
-        > img {
+        > .van-image {
           width: 100%;
           height: 100%;
         }
@@ -391,7 +433,7 @@ export default {
         > p:nth-child(1) {
           width: 250px;
           height: 320px;
-          > img {
+          > .van-image {
             width: 100%;
             height: 100%;
           }
@@ -399,7 +441,7 @@ export default {
         > p:nth-child(2) {
           width: 420px;
           height: 320px;
-          > img {
+          > .van-image {
             width: 100%;
             height: 100%;
           }
