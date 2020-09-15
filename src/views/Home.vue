@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <navigation :colour="false"></navigation>
-    <div class="swiper-box">
+    <div class="swiper-box ">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
         <van-swipe-item class="swipe-item" v-for="(item,index) in bannnerList">
           <div class="center">
@@ -253,6 +253,10 @@ export default {
   mounted() {
     //咨询弹窗 30s
     this.autoAlertDialog()
+    let that = this
+
+    that.$ami('.active-item', 0, 'top', '100%', .5, true)
+
   }
 }
 </script>

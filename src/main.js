@@ -29,6 +29,9 @@ Vue.prototype.$dia = ()=>{
   form.submit();
 };
 
+import {animateFun} from './utils/common.js';
+Vue.prototype.$ami = animateFun;
+
 import BaiduMap from 'vue-baidu-map'
 Vue.use(BaiduMap, {
   ak: 'b0nN1SLy6xKgqtT07XkAgVGMVMdqaUyZ'

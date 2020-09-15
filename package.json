@@ -13,6 +13,7 @@
     "lib-flexible": "^0.3.2",
     "qs": "^6.9.4",
     "sass-resources-loader": "^2.1.0",
+    "scrollreveal": "^4.0.7",
     "vant": "^2.10.6",
     "vue": "^2.6.11",
     "vue-baidu-map": "^0.21.22",
