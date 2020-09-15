@@ -8,14 +8,14 @@
         <div class="items">
             <div class="item item1">
                 <div class="image">
-                    <img :src="dataDetail.datalist[0].img" alt="">
+                    <img class="active-bottom" :src="dataDetail.datalist[0].img" alt="">
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[0].title}}</div>
                     <div class="line2"></div>
                     <div class="line3">{{dataDetail.datalist[0].remark}}</div>
                 </div>
-                <div class="content-item" v-for="(item,index) in dataDetail.datalist[0].content">{{item}}</div>
+                <div :class="'content-item active-right-item'+index" v-for="(item,index) in dataDetail.datalist[0].content">{{item}}</div>
                 <div class="more" @click="goDetail(1)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
@@ -23,14 +23,14 @@
             </div>
             <div class="item item2">
                 <div class="image">
-                    <img :src="dataDetail.datalist[1].img" alt="">
+                    <img class="active-bottom" :src="dataDetail.datalist[1].img" alt="">
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[1].title}}</div>
                     <div class="line2"></div>
                     <div class="line3">{{dataDetail.datalist[1].remark}}</div>
                 </div>
-                <div class="content-item" v-for="(item,index) in dataDetail.datalist[1].content">{{item}}</div>
+                <div :class="'content-item active-right-item'+index" v-for="(item,index) in dataDetail.datalist[1].content">{{item}}</div>
                 <div class="more" @click="goDetail(2)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
@@ -38,14 +38,14 @@
             </div>
             <div class="item item3">
                 <div class="image">
-                    <img :src="dataDetail.datalist[2].img" alt="">
+                    <img class="active-bottom" :src="dataDetail.datalist[2].img" alt="">
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[2].title}}</div>
                     <div class="line2"></div>
                     <div class="line3">{{dataDetail.datalist[2].remark}}</div>
                 </div>
-                <div class="content-item" v-for="(item,index) in dataDetail.datalist[2].content">{{item}}</div>
+                <div :class="'content-item active-right-item'+index" v-for="(item,index) in dataDetail.datalist[2].content">{{item}}</div>
                 <div class="more" @click="goDetail(3)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
@@ -53,14 +53,14 @@
             </div>
             <div class="item item4">
                 <div class="image">
-                    <img :src="dataDetail.datalist[3].img" alt="">
+                    <img class="active-bottom" :src="dataDetail.datalist[3].img" alt="">
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[3].title}}</div>
                     <div class="line2"></div>
                     <div class="line3">{{dataDetail.datalist[3].remark}}</div>
                 </div>
-                <div class="content-item" v-for="(item,index) in dataDetail.datalist[3].content">{{item}}</div>
+                <div :class="'content-item active-right-item'+index" v-for="(item,index) in dataDetail.datalist[3].content">{{item}}</div>
                 <div class="more" @click="goDetail(4)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
@@ -68,14 +68,14 @@
             </div>
             <div class="item item5">
                 <div class="image">
-                    <img :src="dataDetail.datalist[4].img" alt="">
+                    <img class="active-bottom" :src="dataDetail.datalist[4].img" alt="">
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[4].title}}</div>
                     <div class="line2"></div>
                     <div class="line3">{{dataDetail.datalist[4].remark}}</div>
                 </div>
-                <div class="content-item" v-for="(item,index) in dataDetail.datalist[4].content">{{item}}</div>
+                <div :class="'content-item active-right-item'+index" v-for="(item,index) in dataDetail.datalist[4].content">{{item}}</div>
                 <div class="more" @click="goDetail(5)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
@@ -83,14 +83,14 @@
             </div>
             <div class="item item6">
                 <div class="image">
-                    <img :src="dataDetail.datalist[5].img" alt="">
+                    <img class="active-bottom" :src="dataDetail.datalist[5].img" alt="">
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[5].title}}</div>
                     <div class="line2"></div>
                     <div class="line3">{{dataDetail.datalist[5].remark}}</div>
                 </div>
-                <div class="content-item" v-for="(item,index) in dataDetail.datalist[5].content">{{item}}</div>
+                <div :class="'content-item active-right-item'+index" v-for="(item,index) in dataDetail.datalist[5].content">{{item}}</div>
                 <div class="more" @click="goDetail(6)">
                     <div class="more-text">了解更多</div>
                     <img src="../../assets/images/more1.png" />
@@ -195,12 +195,16 @@
         },
         created() {
             this.fetchData()
+        },
+        mounted() {
+            let that = this
         }
     }
 </script>
 
 <style scoped lang="scss">
     .case-area-page{
+        overflow: hidden;
         .background{
             width: 750px;
             height: 748px;

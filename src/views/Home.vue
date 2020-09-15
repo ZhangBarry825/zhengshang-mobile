@@ -16,7 +16,7 @@
       </van-swipe>
     </div>
     <div class="our-service">
-      <div class="title ">行业解决方案</div>
+      <div class="title active-top">我们的服务</div>
       <div class="items">
         <div class="item active-left">
           <img src="../assets/images/service1.png" alt />
@@ -51,91 +51,123 @@
       </div>
     </div>
     <div class="solution">
-      <div class="title">行业解决方案</div>
+      <div class="title active-top">行业解决方案</div>
       <div class="items">
         <div
           class="item"
           v-for="(item,index) in solution"
           :style="'background-image: url('+item.img+')'"
         >
-          <div class="line1">{{item.title}}</div>
-          <div class="line2">{{item.content}}</div>
+          <div class="line1 active-bottom">{{item.title}}</div>
+          <div class="line2 active-bottom">{{item.content}}</div>
         </div>
       </div>
     </div>
     <div class="process">
-      <div class="title">项目服务流程</div>
+      <div class="title active-top">项目服务流程</div>
       <div class="images">
-        <img class="pro" src="../assets/images/pro.png" alt />
-        <img class="pro0" src="../assets/images/pro0.png" alt />
-        <img class="pro1" src="../assets/images/pro1.png" alt />
-        <img class="pro2" src="../assets/images/pro2.png" alt />
-        <img class="pro3" src="../assets/images/pro3.png" alt />
-        <img class="pro4" src="../assets/images/pro4.png" alt />
-        <img class="pro5" src="../assets/images/pro5.png" alt />
-        <img class="pro6" src="../assets/images/pro6.png" alt />
+        <img class="pro active-bottom" src="../assets/images/pro.png" alt />
+        <img class="pro0 active-top0" src="../assets/images/pro0.png" alt />
+        <img class="pro1 active-top1" src="../assets/images/pro1.png" alt />
+        <img class="pro2 active-top2" src="../assets/images/pro2.png" alt />
+        <img class="pro3 active-top3" src="../assets/images/pro3.png" alt />
+        <img class="pro4 active-top4" src="../assets/images/pro4.png" alt />
+        <img class="pro5 active-top5" src="../assets/images/pro5.png" alt />
+        <img class="pro6 active-top6" src="../assets/images/pro6.png" alt />
       </div>
     </div>
     <div class="advantage">
-      <div class="title">我们的优势</div>
+      <div class="title active-top">我们的优势</div>
       <div class="items">
-        <div class="item">
+        <div class="item active-advantage1">
           <img src="../assets/images/adv1.png" alt />
           <div class="text">详细了解功能需求</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage2">
           <img src="../assets/images/adv2.png" alt />
           <div class="text">创意精细的设计</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage3">
           <img src="../assets/images/adv3.png" alt />
           <div class="text">规范的代码开发</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage4">
           <img src="../assets/images/adv4.png" alt />
           <div class="text">安全稳定的数据库</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage5">
           <img src="../assets/images/adv5.png" alt />
           <div class="text">线下实体公司</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage6">
           <img src="../assets/images/adv6.png" alt />
           <div class="text">用户至上的服务</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage7">
           <img src="../assets/images/adv7.png" alt />
           <div class="text">专业的技术团队</div>
         </div>
-        <div class="item">
+        <div class="item active-advantage8">
           <img src="../assets/images/adv8.png" alt />
           <div class="text">众多行业开发经验</div>
         </div>
       </div>
     </div>
     <div class="customer">
-      <div class="title">服务过的客户</div>
+      <div class="title active-top">服务过的客户</div>
       <div class="items">
-        <div class="item">
-          <div class="line1">200+</div>
+        <div class="item active-num">
+          <div class="line1">
+            <animate-number
+                  from="1"
+                  :to="200"
+                  duration="1500"
+                  easing="easeOutQuad"
+                  ref="myNum1">
+            </animate-number>+
+          </div>
           <div class="line2">先上线下微小企业</div>
         </div>
-        <div class="item">
-          <div class="line1">106</div>
+        <div class="item active-num">
+          <div class="line1">
+            <animate-number
+                    from="1"
+                    :to="106"
+                    duration="1500"
+                    easing="easeOutQuad"
+                    ref="myNum2">
+            </animate-number>
+          </div>
           <div class="line2">个人用户</div>
         </div>
-        <div class="item">
-          <div class="line1">68</div>
+        <div class="item active-num">
+          <div class="line1">
+            <animate-number
+                    from="1"
+                    :to="68"
+                    duration="1500"
+                    easing="easeOutQuad"
+                    ref="myNum3">
+            </animate-number>
+          </div>
           <div class="line2">创新创业公司</div>
         </div>
-        <div class="item">
-          <div class="line1">30+</div>
+        <div class="item active-num">
+          <div class="line1">
+            <animate-number
+                    from="1"
+                    :to="30"
+                    duration="1500"
+                    easing="easeOutQuad"
+                    ref="myNum4">
+            </animate-number>+
+          </div>
           <div class="line2">政府和公共服务机构</div>
         </div>
       </div>
     </div>
     <div class="news">
-      <div class="title">新闻中心</div>
+      <div class="title active-top">新闻中心</div>
       <div class="items">
         <div :class="'item active-news'+index" v-for="(item,index) in news" :key="index" @click="goNewsDetail(item.id)">
           <div class="left">
@@ -153,7 +185,7 @@
       </div>
     </div>
     <div class="partner">
-      <div class="title">合作伙伴</div>
+      <div class="title active-top">合作伙伴</div>
       <div class="items">
         <div
           class="item"
@@ -164,11 +196,11 @@
       </div>
     </div>
     <div class="about">
-      <div class="title">关于我们</div>
-      <div class="image" :style="'background-image: url('+aboutus.img+')'"></div>
+      <div class="title active-top">关于我们</div>
+      <div class="image active-original" :style="'background-image: url('+aboutus.img+')'"></div>
       <div
         class="text">{{aboutus.content}}</div>
-      <div class="more">
+      <div class="more" @click="$router.push('/aboutUs')">
         <div class="more-text">了解更多</div>
         <img src="../assets/images/more1.png" alt />
       </div>
@@ -208,7 +240,7 @@ export default {
 
   data () {
     return {
-      showCenterDialog: true,
+      showCenterDialog: false,
       bannnerList:[],
       solution:[],
       news:[],
@@ -255,12 +287,38 @@ export default {
     this.autoAlertDialog()
     let that = this
 
-    // that.$nextTick(()=>{
-    //   that.$ami('.active-left', 0, 'left', '100%', .5, true)
-    //   that.$ami('.active-right', 0, 'right', '100%', .5, true)
-    //   that.$ami('.active-top', 0, 'top', '100%', .5, true)
-    //   that.$ami('.active-bottom', 0, 'bottom', '100%', .5, true)
-    // })
+    setTimeout(()=>{
+      that.$ami('.active-left', 200, 'left', '100%', .5, true)
+      that.$ami('.active-right', 200, 'right', '100%', .5, true)
+      that.$ami('.active-top', 200, 'top', '100%', .5, true)
+      that.$ami('.active-bottom', 200, 'bottom', '100%', .5, true)
+
+      that.$ami('.active-original', 300, 'bottom', '30%', 0, true)
+
+      that.$ami('.active-news0', 0, 'right', '50%', .5, true)
+      that.$ami('.active-news1', 100, 'right', '50%', .5, true)
+      that.$ami('.active-news2', 200, 'right', '50%', .5, true)
+      that.$ami('.active-news3', 300, 'right', '50%', .5, true)
+    },300)
+
+
+    that.$ami('.active-top0', 0, 'top', '100%', .5, true)
+    that.$ami('.active-top1', 100, 'top', '100%', .5, true)
+    that.$ami('.active-top2', 200, 'top', '100%', .5, true)
+    that.$ami('.active-top3', 300, 'top', '100%', .5, true)
+    that.$ami('.active-top4', 400, 'top', '100%', .5, true)
+    that.$ami('.active-top5', 500, 'top', '100%', .5, true)
+    that.$ami('.active-top6', 600, 'top', '100%', .5, true)
+
+
+    that.$ami('.active-num', 0, 'top', '0%', 1, true,()=>{
+      that.$refs.myNum1.start()
+      that.$refs.myNum2.start()
+      that.$refs.myNum3.start()
+      that.$refs.myNum4.start()
+    })
+
+
 
   }
 }
@@ -268,6 +326,7 @@ export default {
 
 <style scoped lang="scss">
 .home {
+  overflow: hidden;
   .swiper-box {
     background-image: url('../assets/images/swipe-back.gif');
     @include back-img-center;
@@ -568,6 +627,15 @@ export default {
           font-size: 22px;
           font-weight: 400;
           color: #333333;
+        }
+      }
+      .item:hover {
+        cursor: pointer;
+        color: rgba(47, 103, 241, 0.31);
+
+        img {
+          transition: all 1.5s;
+          transform: rotateY(540deg);
         }
       }
 

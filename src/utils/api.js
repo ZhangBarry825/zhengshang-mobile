@@ -92,3 +92,24 @@ export function getGovCloud (data) {
     })
 }
 
+export function getCaseClass (data) {
+    return request({
+        url: '/index/customer/get_categorys',
+        method: 'get',
+        params: data
+    })
+}
+export function getCaseList (data) {
+    return request({
+        url: '/index/customer/caselist',
+        method: 'get',
+        params: data
+    })
+}
+export function getCaseDetail (data) {
+    return request({
+        url: '/index/customer/caseinfo',
+        method: 'get',
+        params: data
+    })
+}

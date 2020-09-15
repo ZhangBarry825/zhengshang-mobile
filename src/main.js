@@ -14,11 +14,13 @@ Vue.use(ElementUI);
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
+Vue.use(Vant);
 
 import 'postcss-pxtorem'
 import 'lib-flexible'
 
-Vue.use(Vant);
+import VueAnimateNumber from 'vue-animate-number'
+Vue.use(VueAnimateNumber)
 
 Vue.prototype.$dia = ()=>{
   var form = document.createElement('form');
