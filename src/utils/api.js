@@ -53,3 +53,11 @@ export function contactUs (data) {
         data
     })
 }
+
+export function getAboutUs (data) {
+    return request({
+        url: '/index/about/index',
+        method: 'get',
+        params: data
+    })
+}
