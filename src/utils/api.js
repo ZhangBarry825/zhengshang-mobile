@@ -45,3 +45,11 @@ export function getNewsDetail (data) {
         params: data
     })
 }
+
+export function contactUs (data) {
+    return request({
+        url: '/index/contact/save',
+        method: 'post',
+        data
+    })
+}
