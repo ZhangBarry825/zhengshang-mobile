@@ -137,7 +137,7 @@
     <div class="news">
       <div class="title">新闻中心</div>
       <div class="items">
-        <div :class="'item active-news'+index" v-for="(item,index) in news" :key="index">
+        <div :class="'item active-news'+index" v-for="(item,index) in news" :key="index" @click="goNewsDetail(item.id)">
           <div class="left">
             <div
               class="img"
@@ -210,6 +210,9 @@ export default {
       this.news=res.data.news
       this.partner=res.data.partner
       this.aboutus=res.data.aboutus
+    },
+    goNewsDetail(id){
+      this.$router.push('/newsDetail?id='+id)
     },
   },
   created() {

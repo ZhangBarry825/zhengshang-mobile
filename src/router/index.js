@@ -85,4 +85,16 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  window.scrollTo(0,0)
+
+  if(routes.find((val)=>{
+    return val.path == to.path
+  })){
+    next()
+  }else {
+    next('/')
+  }
+})
+
 export default router

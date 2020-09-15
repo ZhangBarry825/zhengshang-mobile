@@ -23,3 +23,25 @@ export function getHomeData (data) {
         params: data
     })
 }
+export function getNewsClass (data) {
+    return request({
+        url: '/index/news/get_categorys',
+        method: 'get',
+        params: data
+    })
+}
+
+export function getNewsList (data) {
+    return request({
+        url: '/index/news/newslist',
+        method: 'get',
+        params: data
+    })
+}
+export function getNewsDetail (data) {
+    return request({
+        url: '/index/news/newsinfo',
+        method: 'get',
+        params: data
+    })
+}

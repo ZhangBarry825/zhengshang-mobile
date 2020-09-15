@@ -2,22 +2,32 @@
     <div class="news-list">
         <navigation :colour="true"></navigation>
         <div class="content">
+            <div class="menus">
+                <van-tabs v-model="activeIndex" @change="menuChange">
+                    <van-tab
+                            :title="item.title"
+                            :index="1111"
+                            v-for="(item,index) in Acquisition"
+                            :key="index"
+                    ></van-tab>
+                </van-tabs>
+            </div>
             <div class="items">
-                <div :class="'item active-news'+index" v-for="(item,index) in 4" :key="index">
+                <div :class="'item active-news'+index" v-for="(item,index) in newslist" @click="goDetail(item.id)">
                     <div class="left">
                         <div
                                 class="img"
-                                :style="'background-image: url('+require('../../assets/images/news0.png')+')'"
+                                :style="'background-image: url('+item.img+')'"
                         ></div>
                     </div>
                     <div class="right">
-                        <div class="line1">2C互联网还有机会么？</div>
-                        <div class="line3">“资本寒冬”四个字从2018年开始贯穿到了天，2020年初又因为疫情的影响...</div>
-                        <div class="line2">2020-05-08</div>
+                        <div class="line1">{{item.title}}</div>
+                        <div class="line3">{{item.remark}}</div>
+                        <div class="line2">{{item.ctime}}</div>
                     </div>
                 </div>
             </div>
-            <div class="more">
+            <div class="more" @click="getMore" v-loading="loading">
                 <div class="text">加载更多</div>
                 <div class="img"></div>
             </div>
@@ -29,19 +39,77 @@
 <script>
     import navigation from "../../components/navigation/navigation";
     import PageFooter from "../../components/page-footer/PageFooter";
+    import {getNewsClass, getNewsList} from "../../utils/api";
 
     export default {
         name: "NewsList",
         components: {
             navigation,
             PageFooter,
+        },
+        data(){
+            return{
+                loading:false,
+                pindex: '',
+                page: 1,
+                Acquisition: [],
+                activeIndex: 0,
+                total: 1,
+                recommend: [{ img: '', title: '' }],
+                newslist: [],
+            }
+        },
+        methods:{
+            goDetail(id){
+                this.$router.push('/newsDetail?id='+id)
+            },
+            getMore(){
+                this.loading=true
+                console.log(this.page)
+                this.page++
+                this.getList()
+                setTimeout(()=>{
+                    this.loading=false
+                },500)
+            },
+            async fetchData(){
+                let { data } = await getNewsClass()
+                this.Acquisition = data
+                this.pindex = data[0].index
+                this.getList()
+            },
+            async getList () {
+                let that = this
+                let { data } = await getNewsList({ limit: 8, page: this.page, pindex: this.pindex })
+                if (this.page == 1) {
+                    this.newslist = data.rows
+                } else {
+                    that.newslist=that.newslist.concat(data.rows)
+                }
+                this.total = data.total
+                //console.log(this.recommend, "获取列表")
+                //console.log(this.newslist, "获取列表")
+            },
+            menuChange (index, title) {
+                //console.log(index, title)
+                this.recommend = []
+                this.newslist = []
+                this.pindex = this.Acquisition[index].index
+                this.page = 1
+                this.getList()
+            }
+        },
+        created() {
+          this.fetchData()
+        },
+        mounted() {
+
         }
     }
 </script>
 
 <style scoped lang="scss">
     .news-list{
-        position: absolute;
         @include page-style;
         background-color: #f4f5f8;
         padding-top: 100px;
@@ -51,6 +119,31 @@
             padding: 20px 0;
             box-sizing: border-box;
             margin-top: 15px;
+            .menus{
+                /deep/ .van-tabs {
+                    .van-tabs__wrap {
+                        border-bottom: 1px solid #d6dce9;
+                        height: 55px;
+                        .van-tabs__nav {
+                            background-color: #f4f5f8 !important;
+                        }
+                        .van-tab__text {
+                            font-size: 15px;
+                            font-weight: 400;
+                            overflow: visible;
+                        }
+                        .van-tab {
+                            margin-bottom: 0px;
+                        }
+                        .van-tab--active {
+                            color: #014ce5;
+                        }
+                        .van-tabs__line {
+                            background-color: #014ce5;
+                        }
+                    }
+                }
+            }
             .items{
                 width: 100%;
                 display: flex;
