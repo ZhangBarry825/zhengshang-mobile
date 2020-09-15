@@ -69,7 +69,11 @@
                   </div>
                 </template>
                 <div :class="'arrangement'+item.row">
-                  <p v-for="(items, indexs) in item.subclass" :key="indexs">{{items.title}}</p>
+                  <p
+                    v-for="(items, indexs) in item.subclass"
+                    @click="jumpLink(items.Link)"
+                    :key="indexs"
+                  >{{items.title}}</p>
                 </div>
               </van-collapse-item>
             </van-collapse>
@@ -89,13 +93,17 @@
                   </div>
                 </template>
                 <div :class="'arrangement'+item.row">
-                  <p v-for="(items, indexs) in item.subclass" :key="indexs">{{items.title}}</p>
+                  <p
+                    v-for="(items, indexs) in item.subclass"
+                    @click="jumpLink(items.Link)"
+                    :key="indexs"
+                  >{{items.title}}</p>
                 </div>
               </van-collapse-item>
             </van-collapse>
           </div>
           <div class="home dsad van" @click="jumpTitle('/aboutUs')">关于我们</div>
-          <div class="home van" @click="jumpTitle('/Contact')">联系我们</div>
+          <div class="home van" @click="jumpTitle('/contact')">联系我们</div>
         </div>
       </transition>
     </div>
