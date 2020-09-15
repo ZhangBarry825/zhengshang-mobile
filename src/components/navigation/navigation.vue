@@ -13,29 +13,34 @@
         <div v-if="unfold" class="list">
           <div class="home van" @click="jumpLink('/')">首页</div>
           <div class="business">
-            <van-collapse
-              v-for="(item, index) in navig"
-              :key="index"
-              v-model="activeNames"
-              :border="true"
-              accordion
-              @change="change"
-            >
+            <van-collapse v-model="activeNames" accordion @change="change">
               <van-collapse-item
-                :title-class="titds==item.id?'researchP':'titdsdaldsdae'"
+                v-for="(item, index) in navig"
+                :key="index"
                 :title="item.title"
                 :name="item.id"
                 :border="false"
+                :title-class="titds==item.id?'researchP':'titdsdaldsdae'"
               >
-                <van-collapse v-model="activeName" :border="false" accordion @change="changegg">
+                <template #title>
+                  <div>
+                    <span @click="jumpTitle(item.Link)">{{item.title}}</span>
+                  </div>
+                </template>
+                <!--  -->
+                <van-collapse v-model="activeName" accordion @change="change">
                   <van-collapse-item
-                    :title-class="titdsid==itema.id?'researchP':'titdsdaldsdae'"
                     v-for="(itema, indexa) in item.subclass"
                     :key="indexa"
-                    :title="itema.title"
                     :name="itema.id"
                     :border="false"
+                    :title-class="titds==itema.id?'researchP':'titdsdaldsdae'"
                   >
+                    <template #title>
+                      <div>
+                        <span @click="jumpTitle(itema.Link)">{{itema.title}}</span>
+                      </div>
+                    </template>
                     <div :class="'arrangement'+itema.row">
                       <p
                         v-for="(items, indexs) in itema.subclass"
@@ -58,6 +63,11 @@
                 :border="false"
                 :title-class="titds==item.id?'researchP':'titdsdaldsdae'"
               >
+                <template #title>
+                  <div>
+                    <span @click="jumpTitle(item.Link)">{{item.title}}</span>
+                  </div>
+                </template>
                 <div :class="'arrangement'+item.row">
                   <p v-for="(items, indexs) in item.subclass" :key="indexs">{{items.title}}</p>
                 </div>
@@ -69,19 +79,23 @@
               <van-collapse-item
                 v-for="(item, index) in navig2"
                 :key="index"
-                :title="item.title"
                 :name="item.id"
                 :border="false"
                 :title-class="titds==item.id?'researchP':'titdsdaldsdae'"
               >
+                <template #title>
+                  <div>
+                    <span @click="jumpTitle(item.Link)">{{item.title}}</span>
+                  </div>
+                </template>
                 <div :class="'arrangement'+item.row">
                   <p v-for="(items, indexs) in item.subclass" :key="indexs">{{items.title}}</p>
                 </div>
               </van-collapse-item>
             </van-collapse>
           </div>
-          <div class="home dsad van">关于我们</div>
-          <div class="home van">联系我们</div>
+          <div class="home dsad van" @click="jumpTitle('/aboutUs')">关于我们</div>
+          <div class="home van" @click="jumpTitle('/Contact')">联系我们</div>
         </div>
       </transition>
     </div>
@@ -115,11 +129,13 @@ export default {
         {
           title: "业务领域",
           id: 1,
+          Link: '/caseArea',
           subclass: [
             {
               title: 'APP开发',
               row: 3,
               id: 2,
+              Link: '/appCustom',
               subclass: [
                 {
                   text: '社交',
@@ -159,6 +175,7 @@ export default {
               title: "小程序开发",
               row: 2,
               id: 3,
+              Link: '/caseArea/mini-program',
               subclass: [
                 {
                   text: '展示小程序',
@@ -190,6 +207,7 @@ export default {
               title: "网站建设",
               row: 2,
               id: 4,
+              Link: '/caseArea/website',
               subclass: [
                 {
                   text: '企业官网',
@@ -213,6 +231,7 @@ export default {
               title: "系统集成",
               row: 1,
               id: 5,
+              Link: '/systemInte',
               subclass: [
                 {
                   text: 'ERP企业管理系统',
@@ -240,24 +259,31 @@ export default {
               title: "政务云",
               row: 1,
               id: 6,
+              Link: '/caseArea/govCloud',
               subclass: [
                 {
-                  text: '政府OA办公系统'
+                  text: '政府OA办公系统',
+                  Link: '/caseArea/govCloud'
                 },
                 {
-                  text: '档案管理系统'
+                  text: '档案管理系统',
+                  Link: '/caseArea/govCloud'
                 },
                 {
-                  text: '人事管理系统'
+                  text: '人事管理系统',
+                  Link: '/caseArea/govCloud'
                 },
                 {
-                  text: '采购管理系统'
+                  text: '采购管理系统',
+                  Link: '/caseArea/govCloud'
                 },
                 {
-                  text: '流程管理系统'
+                  text: '流程管理系统',
+                  Link: '/caseArea/govCloud'
                 },
                 {
-                  text: '会议管理系统'
+                  text: '会议管理系统',
+                  Link: '/caseArea/govCloud'
                 },
               ]
             },
@@ -265,18 +291,23 @@ export default {
               title: "物联网",
               row: 2,
               id: 7,
+              Link: '/caseArea/things',
               subclass: [
                 {
-                  text: '人工智能'
+                  text: '人工智能',
+                  Link: '/caseArea/things'
                 },
                 {
-                  text: '人脸识别'
+                  text: '人脸识别',
+                  Link: '/caseArea/things'
                 },
                 {
-                  text: '硬件设备'
+                  text: '硬件设备',
+                  Link: '/caseArea/things'
                 },
                 {
-                  text: '语音系统'
+                  text: '语音系统',
+                  Link: '/caseArea/things'
                 }
               ]
             },
@@ -289,24 +320,31 @@ export default {
           title: "客户案例",
           row: 3,
           id: 8,
+          Link: '/customerCase',
           subclass: [
             {
               title: 'APP开发',
+              Link: '/appCustom',
             },
             {
               title: '系统集成',
+              Link: '/systemInte',
             },
             {
               title: '小程序开发',
+              Link: '/caseArea/mini-program',
             },
             {
               title: '政务云',
+              Link: '/caseArea/govCloud',
             },
             {
               title: '网站建设',
+              Link: '/caseArea/website',
             },
             {
               title: '物联网',
+              Link: '/caseArea/things',
             },
           ]
         },
@@ -316,18 +354,23 @@ export default {
           title: "新闻中心",
           row: 2,
           id: 9,
+          Link: '/newsList',
           subclass: [
             {
               title: '公司新闻',
+              Link: '/newsList',
             },
             {
               title: '项目签约',
+              Link: '/newsList',
             },
             {
               title: '行业动态',
+              Link: '/newsList',
             },
             {
               title: '技术专栏',
+              Link: '/newsList',
             },
           ]
         }
@@ -356,6 +399,17 @@ export default {
     expandAndClose () {
       console.log("00000000")
       this.unfold = !this.unfold
+    },
+    jumpTitle (Link) {
+      console.log(Link)
+      if (Link == this.$router.history.current.fullPath) {
+        this.unfold = !this.unfold
+        return
+      }
+      this.$router.push({
+        path: Link,
+        query: {}
+      })
     },
     change (e) {
       this.titds = e
