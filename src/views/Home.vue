@@ -3,7 +3,7 @@
     <navigation :colour="false"></navigation>
     <div class="swiper-box ">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-        <van-swipe-item class="swipe-item" v-for="(item,index) in bannnerList">
+        <van-swipe-item class="swipe-item" v-for="(item,index) in bannerList">
           <div class="center">
             <div class="line1">{{item.title}}</div>
             <div class="line2">{{item.content}}</div>
@@ -241,7 +241,7 @@ export default {
   data () {
     return {
       showCenterDialog: false,
-      bannnerList:[],
+      bannerList:[],
       solution:[],
       news:[],
       partner:[],
@@ -256,7 +256,7 @@ export default {
     async fetchData(){
       let res = await getHomeData()
       console.log(res.data)
-      this.bannnerList=res.data.carousel
+      this.bannerList=res.data.carousel
       this.solution=res.data.solution
       this.news=res.data.news
       this.partner=res.data.partner

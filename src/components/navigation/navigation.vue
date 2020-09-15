@@ -3,11 +3,8 @@
     <div v-if="propD" class="placeholder"></div>
     <div class="navigation" :class="coloura?'navigationasd':''">
       <div class="head" :class="unfold?'headasdad':''">
-        <img :src="coloura?logo1:unfold?logo1:logo0" alt />
+        <img @click="jumpTitle('/')" :src="coloura?logo1:unfold?logo1:logo0" alt />
         <img @click="expandAndClose" :src="coloura?unfold?menu2:menu1:unfold?menu2:menu4" alt />
-        <!-- menu1//黑三行
-        menu2//黑差
-        menu4//白三行-->
       </div>
       <transition name="fade">
         <div v-if="unfold" class="list">
@@ -20,8 +17,7 @@
                 :title="item.title"
                 :name="item.id"
                 :border="false"
-                :title-class="titds==item.id?'researchP':'titdsdaldsdae'"
-              >
+                :title-class="titds==item.id?'researchP':'titdsdaldsdae'">
                 <template #title>
                   <div>
                     <span @click="jumpTitle(item.Link)">{{item.title}}</span>
