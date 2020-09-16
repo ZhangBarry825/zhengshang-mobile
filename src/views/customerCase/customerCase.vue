@@ -15,7 +15,7 @@
                         <div class="item" v-for="(item2, index2) in datalist" :key="index2"
                              @click="$router.push({path: '/customerCasedetails',query: {id: item2.id,}})">
                             <div>
-                                <van-image fit="cover" :src="item2.img"/>
+                                <van-image fit="cover" style="height: 165px" :src="item2.img"/>
                             </div>
                             <div>
                                 <p>{{item2.title}}</p>
@@ -161,6 +161,14 @@
             }
         }
 
+        ::v-deep .van-tabs--line .van-tabs__wrap{
+            height: 70px;
+             .van-tab__text {
+                font-size: 18px;
+            }
+        }
+
+
         .tabs {
             width: 750px;
             height: 80px;
@@ -174,6 +182,7 @@
                 padding: 0 30px 30px;
                 box-sizing: border-box;
 
+
                 .item {
                     width: 330px;
                     margin-top: 30px;
@@ -182,10 +191,7 @@
                     > div:nth-child(1) {
                         width: 330px;
 
-                        > img {
-                            width: 330px;
-                            height: 220px;
-                        }
+
                     }
 
                     > div:nth-child(2) {
