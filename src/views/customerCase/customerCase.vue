@@ -122,8 +122,8 @@
                 //console.log(index, title)
                 this.pindex = this.tabList[index].index
                 this.page = 1
-                console.log(this.pindex)
-                console.log(index)
+                //console.log(this.pindex)
+                //console.log(index)
                 this.retrieveData()
             }
         },

@@ -72,7 +72,7 @@ export default {
     },
     async fetchData(){
       let res=await getCaseDetail({id:this.id})
-      console.log(res.data)
+      //console.log(res.data)
       this.dataDetail=res.data
     }
   },

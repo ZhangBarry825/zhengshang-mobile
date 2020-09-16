@@ -65,7 +65,7 @@
             },
             getMore(){
                 this.loading=true
-                console.log(this.page)
+                //console.log(this.page)
                 this.page++
                 this.getList()
                 setTimeout(()=>{

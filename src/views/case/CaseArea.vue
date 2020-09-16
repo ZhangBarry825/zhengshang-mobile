@@ -189,7 +189,7 @@
             },
             async fetchData(){
                 let res= await getCaseArea()
-                console.log(res.data)
+                //console.log(res.data)
                 this.dataDetail=res.data
             }
         },

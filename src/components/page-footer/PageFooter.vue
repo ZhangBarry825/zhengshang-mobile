@@ -56,7 +56,7 @@ export default {
       let { data } = await bottomInfoapi()
       this.Footer = data
       this.companys = data.companys
-      console.log(data)
+      //console.log(data)
     }
   },
 }

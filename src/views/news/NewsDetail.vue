@@ -48,7 +48,7 @@
             },
             async fetchData(){
                 let res= await getNewsDetail({id:this.id})
-                console.log(res.data)
+                //console.log(res.data)
                 this.artDetail=res.data
             }
         },

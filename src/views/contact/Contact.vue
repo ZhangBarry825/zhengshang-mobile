@@ -127,7 +127,7 @@
                         contactUs({ name: this.formData.name, mobile: this.formData.phone, remark: this.formData.description }).then(res => {
 
                             if(res.code==1){
-                                console.log(res)
+                                //console.log(res)
                                 Dialog({
                                     message: '提交成功！',
                                     confirmButtonColor:'#FF7E00'

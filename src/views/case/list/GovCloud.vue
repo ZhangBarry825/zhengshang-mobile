@@ -254,7 +254,7 @@
         methods:{
             async fetchData(){
                 let res =await getGovCloud()
-                console.log(res.data)
+                //console.log(res.data)
                 this.dataDetail=res.data
             },
             openDialog() {

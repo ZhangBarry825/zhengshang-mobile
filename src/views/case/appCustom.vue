@@ -278,7 +278,7 @@ export default {
     toggleGraph (index) {
       this.develimg = this.developable[index].industry
       this.activa = index
-      console.log(index)
+      //console.log(index)
     }
   },
   //组件

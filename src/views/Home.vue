@@ -255,7 +255,7 @@ export default {
   methods: {
     async fetchData(){
       let res = await getHomeData()
-      console.log(res.data)
+      //console.log(res.data)
       this.bannerList=res.data.carousel
       this.solution=res.data.solution
       this.news=res.data.news
