@@ -212,15 +212,15 @@
                 .blue {
                     width: 220px;
                     height: 512px;
-                    background: #014CE5;
+                    /*background: #014CE5;*/
                 }
 
                 .map {
                     position: absolute;
                     width:100%;
                     height: 512px;
-                    top: 50px;
-                    padding-left: 77px;
+                    /*top: 50px;*/
+                    /*padding-left: 77px;*/
                     box-sizing: border-box;
                     .bdmp{
                         width: 100%;
@@ -256,6 +256,13 @@
                     margin-bottom: 40px;
                     .el-input__inner{
                         height: 80px;
+                        font-size: 25px;
+                    }
+                    textarea{
+                        font-size: 25px;
+                    }
+                    .el-form-item__error{
+                        font-size: 25px;
                     }
                 }
             }

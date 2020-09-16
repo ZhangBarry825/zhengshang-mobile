@@ -119,6 +119,7 @@
         <div class="item active-num">
           <div class="line1">
             <animate-number
+                  class="animate-number"
                   from="1"
                   :to="200"
                   duration="1500"
@@ -131,6 +132,7 @@
         <div class="item active-num">
           <div class="line1">
             <animate-number
+                    class="animate-number"
                     from="1"
                     :to="106"
                     duration="1500"
@@ -143,6 +145,7 @@
         <div class="item active-num">
           <div class="line1">
             <animate-number
+                    class="animate-number"
                     from="1"
                     :to="68"
                     duration="1500"
@@ -155,6 +158,7 @@
         <div class="item active-num">
           <div class="line1">
             <animate-number
+                    class="animate-number"
                     from="1"
                     :to="30"
                     duration="1500"
@@ -726,7 +730,7 @@ export default {
         margin-bottom: 70px;
         cursor: pointer;
         width: 100%;
-        height: 207px;
+        min-height: 207px;
         background: #ffffff;
         display: flex;
         flex-direction: row;
@@ -765,16 +769,16 @@ export default {
 
           .line2 {
             font-size: 20px;
-            font-weight: 400;
+            line-height: 1.5;
             color: #9eaac3;
-            margin: 15px 0 20px 0;
+            padding: 5px 0 10px 0;
           }
 
           .line3 {
             font-size: 22px;
             font-weight: 400;
             color: #333333;
-            @include line-hidden(3);
+            @include line-hidden(2);
           }
         }
       }

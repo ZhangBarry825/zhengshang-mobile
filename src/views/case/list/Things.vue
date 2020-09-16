@@ -155,7 +155,7 @@
             <div class="center-content">
                 <div class="cc-title">
                     <img :src="securityImg[securityIndex]" alt="">
-                    <div class="text">服务器安全</div>
+                    <div class="text">{{securityList[securityIndex].title}}</div>
                 </div>
                 <div class="cc-items">
                     <div class="item" v-for="item in securityList[securityIndex].items">{{item}}</div>

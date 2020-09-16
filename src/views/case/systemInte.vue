@@ -259,12 +259,9 @@
             <p>
               <img src="../../assets/images/systemInte/anquan.png" alt />
             </p>
-            <p>源代码安全</p>
+            <p>{{securityList[0].title}}</p>
           </div>
-          <div class="trxt">1、防SQL注入</div>
-          <div class="trxt">2、过滤拦截机制</div>
-          <div class="trxt">3、并发安全机制</div>
-          <div class="trxt">4、加密(MDS、RSA、DES)</div>
+          <div class="trxt" v-for="item in securityList[0].items">{{item}}</div>
         </div>
       </div>
       <div class="neirong">
@@ -276,12 +273,9 @@
             <p>
               <img src="../../assets/images/systemInte/cheng1-1.png" alt />
             </p>
-            <p>源代码安全</p>
+            <p>{{securityList[1].title}}</p>
           </div>
-          <div class="trxt">1、防SQL注入</div>
-          <div class="trxt">2、过滤拦截机制</div>
-          <div class="trxt">3、并发安全机制</div>
-          <div class="trxt">4、加密(MDS、RSA、DES)</div>
+          <div class="trxt" v-for="item in securityList[1].items">{{item}}</div>
         </div>
       </div>
       <div class="neirong">
@@ -293,12 +287,9 @@
             <p>
               <img src="../../assets/images/systemInte/cheng2-2.png" alt />
             </p>
-            <p>源代码安全</p>
+            <p>{{securityList[2].title}}</p>
           </div>
-          <div class="trxt">1、防SQL注入</div>
-          <div class="trxt">2、过滤拦截机制</div>
-          <div class="trxt">3、并发安全机制</div>
-          <div class="trxt">4、加密(MDS、RSA、DES)</div>
+          <div class="trxt" v-for="item in securityList[2].items">{{item}}</div>
         </div>
       </div>
       <div class="neirong">
@@ -310,12 +301,9 @@
             <p>
               <img src="../../assets/images/systemInte/cheng3-1.png" alt />
             </p>
-            <p>源代码安全</p>
+            <p>{{securityList[3].title}}</p>
           </div>
-          <div class="trxt">1、防SQL注入</div>
-          <div class="trxt">2、过滤拦截机制</div>
-          <div class="trxt">3、并发安全机制</div>
-          <div class="trxt">4、加密(MDS、RSA、DES)</div>
+          <div class="trxt" v-for="item in securityList[3].items">{{item}}</div>
         </div>
       </div>
     </div>
@@ -329,7 +317,7 @@
             </p>
             <p>程序使用培训</p>
           </div>
-          <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
+          <div>项目完成上线后，提供详细的使用说明文档和源码，并有专人答疑解惑</div>
         </div>
         <div class="itemas">
           <div>
@@ -338,7 +326,7 @@
             </p>
             <p>项目问题咨询</p>
           </div>
-          <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
+          <div>从项目立项到上线，过程中有任何问题都可以咨询我们的销售顾问或技术人员</div>
         </div>
         <div class="itemas">
           <div>
@@ -347,7 +335,7 @@
             </p>
             <p>项目部署及维护</p>
           </div>
-          <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
+          <div>项目完成后，进行整体测试，后期使用过程中有bug可以联系我们，会有专人对您的项目进行维护</div>
         </div>
         <div class="itemas">
           <div>
@@ -356,7 +344,7 @@
             </p>
             <p>后期功能升级和修改</p>
           </div>
-          <div>程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域程序使用培训相关内容显示区域</div>
+          <div>项目使用过程中，想升级功能或改版，随时联系我们，会有销售顾问给您提供专业化的建议</div>
         </div>
       </div>
     </div>
@@ -371,7 +359,28 @@ export default {
 
   data () {
     return {
-
+      securityList: [
+        {
+          img: require('../../assets/images/sec1.png'),
+          title:'源代码安全',
+          items:['1、防SQL注入','2、过滤拦截机制','3、并发安全机制','4、加密(MDS、RSA、DES)']
+        },
+        {
+          img:require('../../assets/images/sec2.png'),
+          title:'程序安全',
+          items:['1、身份认证机制','2、权限控制','3、渗透测试','4、日志追踪']
+        },
+        {
+          img:require('../../assets/images/sec3.png'),
+          title:'数据库安全',
+          items:['1、双机容错','2、数据备份','3、灾难恢复','4、数据存储(基于RAID的存储技术)']
+        },
+        {
+          img:require('../../assets/images/sec4.png'),
+          title:'服务器安全',
+          items:['1、防火墙','2、入侵检测','3、漏洞扫描','4、物理隔离']
+        }
+      ]
     }
   },
   //生命周期函数
@@ -422,7 +431,7 @@ export default {
     background-position: 0 40px;
     > h4 {
       font-size: 34px;
-      font-family: Source Han Sans CN;
+
       font-weight: 500;
       color: #222222;
       text-align: center;
@@ -487,7 +496,7 @@ export default {
       background-size: 750px 262px;
       > h4 {
         font-size: 34px;
-        font-family: Source Han Sans CN;
+
         font-weight: 500;
         color: #ffffff;
         text-align: center;
@@ -505,8 +514,8 @@ export default {
       }
       .list {
         width: 615px;
-        background: #182864;
-        opacity: 0.7;
+        background: rgba(24,40,100,.7);
+        opacity: .95;
         margin: 0 auto;
         margin-top: -100px;
         padding: 93px 0 53px 148px;
@@ -555,11 +564,10 @@ export default {
           > p:nth-child(2) {
             margin-top: 28px;
             font-size: 26px;
-            font-family: Source Han Sans CN;
+
             font-weight: 400;
-            color: #ffffff;
+            color: rgba(255,255,255,.6);
             line-height: 40px;
-            opacity: 0.4;
           }
         }
       }
@@ -571,7 +579,7 @@ export default {
     box-sizing: border-box;
     > h4 {
       font-size: 34px;
-      font-family: Source Han Sans CN;
+
       font-weight: 500;
       color: #222222;
       line-height: 44px;
@@ -629,7 +637,7 @@ export default {
     padding-top: 30px;
     > h4 {
       font-size: 34px;
-      font-family: Source Han Sans CN;
+
       font-weight: 500;
       color: #222222;
       line-height: 44px;
@@ -673,7 +681,7 @@ export default {
           }
           > p:nth-child(2) {
             font-size: 34px;
-            font-family: Source Han Sans CN;
+
             font-weight: 500;
             color: #333333;
             margin-left: 20px;
@@ -702,7 +710,7 @@ export default {
     background-position: 0 400px;
     > h4 {
       font-size: 34px;
-      font-family: Source Han Sans CN;
+
       font-weight: 500;
       color: #222222;
       line-height: 44px;
@@ -714,8 +722,7 @@ export default {
       }
       .itemas {
         width: 690px;
-        background: #ffffff;
-        opacity: 0.9;
+        background: rgba(255,255,255,.95);
         margin: 0 auto;
         padding: 32px 38px;
         box-sizing: border-box;
@@ -732,7 +739,6 @@ export default {
           }
           > p:nth-child(2) {
             font-size: 34px;
-            font-family: Adobe Heiti Std;
             font-weight: normal;
             color: #222222;
             margin-left: 20px;
@@ -740,7 +746,6 @@ export default {
         }
         > div:nth-child(2) {
           font-size: 24px;
-          font-family: Adobe Heiti Std;
           font-weight: normal;
           color: #9eaac3;
           line-height: 34px;

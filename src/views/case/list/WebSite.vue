@@ -258,28 +258,28 @@
                         <img src="../../../assets/images/c1.png" alt="">
                         <div class="text">程序使用培训</div>
                     </div>
-                    <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                    <div class="line2">项目完成上线后，提供详细的使用说明文档和源码，并有专人答疑解惑</div>
                 </div>
                 <div class="right-item">
                     <div class="line1">
                         <img src="../../../assets/images/c2.png" alt="">
                         <div class="text">项目问题咨询</div>
                     </div>
-                    <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                    <div class="line2">从项目立项到上线，过程中有任何问题都可以咨询我们的销售顾问或技术人员</div>
                 </div>
                 <div class="right-item">
                     <div class="line1">
                         <img src="../../../assets/images/c3.png" alt="">
                         <div class="text">项目部署及维护</div>
                     </div>
-                    <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                    <div class="line2">项目完成后，进行整体测试，后期使用过程中有bug可以联系我们，会有专人对您的项目进行维护</div>
                 </div>
                 <div class="right-item">
                     <div class="line1">
                         <img src="../../../assets/images/c4.png" alt="">
-                        <div class="text">功能升级和修改</div>
+                        <div class="text">后期功能升级修改</div>
                     </div>
-                    <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                    <div class="line2">项目使用过程中，想升级功能或改版，随时联系我们，会有销售顾问给您提供专业化的建议</div>
                 </div>
             </div>
         </div>
@@ -620,7 +620,6 @@
                     padding: 40px 20px;
                     box-sizing: border-box;
                     width: 334px;
-                    height: 240px;
                     display: flex;
                     flex-direction: column;
                     background-color: #ffffff;
@@ -645,8 +644,8 @@
                         font-size: 22px;
                         font-weight: 400;
                         color: #9EAAC4;
-                        line-height: 29px;
-                        @include line-hidden(3)
+                        line-height: 1.3;
+                        @include line-hidden(4)
                     }
                 }
             }

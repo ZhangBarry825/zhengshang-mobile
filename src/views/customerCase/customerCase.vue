@@ -1,6 +1,6 @@
 <template>
     <div class="customerCase">
-        <navigation :colour="false"></navigation>
+        <navigation :colour="false" @reload="reloadData"></navigation>
         <div
                 class="backgro"
                 :style="'background-image: url('+require('../../assets/images/customerCase/backgro.png')+')'"
@@ -9,8 +9,8 @@
             <p class="bar"></p>
         </div>
         <div class="tabs">
-            <van-tabs color="#FF6A00" @change="menuChange" v-model="activeIndex">
-                <van-tab v-for="item1 in tabList" :title="item1.title">
+            <van-tabs color="#FF6A00" @change="menuChange" v-model="activeIndex" ref="myTabs">
+                <van-tab v-for="(item1,index1) in tabList" :title="item1.title" :name="index1">
                     <div class="list">
                         <div class="item" v-for="(item2, index2) in datalist" :key="index2"
                              @click="$router.push({path: '/customerCasedetails',query: {id: item2.id,}})">
@@ -73,7 +73,7 @@
                     text: '线上健身 重构健身新模式'
                 }],
 
-                activeIndex: 0,
+                activeIndex:0,
                 tabList: [],
                 pindex: '',
                 page: 1,
@@ -86,9 +86,17 @@
         //生命周期函数
         created() {
             this.typeOfAcquisition()
+            this.activeIndex=parseInt(this.$route.query.caseId)||0
+        },
+        mounted() {
+
         },
         //方法
         methods: {
+            reloadData(){
+                this.typeOfAcquisition()
+                this.activeIndex=parseInt(this.$route.query.caseId)||0
+            },
             //   获取数据列表
             retrieveData() {
                 let that = this
@@ -108,7 +116,7 @@
             // 获取种类
             async typeOfAcquisition() {
                 let {data} = await getCaseClass()
-                this.pindex = data[0].index
+                this.pindex = data[this.activeIndex].index
                 this.tabList = data
                 this.retrieveData()
                 //console.log(data, '获取种类')

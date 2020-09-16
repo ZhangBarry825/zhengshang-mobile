@@ -34,6 +34,8 @@ Vue.prototype.$dia = ()=>{
 import {animateFun} from './utils/common.js';
 Vue.prototype.$ami = animateFun;
 
+import './assets/font/font.scss'
+
 import BaiduMap from 'vue-baidu-map'
 Vue.use(BaiduMap, {
   ak: 'b0nN1SLy6xKgqtT07XkAgVGMVMdqaUyZ'

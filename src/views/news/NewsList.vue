@@ -161,7 +161,6 @@
                     .left {
                         width: 200px;
                         height: 200px;
-                        margin-left: 20px;
                         box-sizing: border-box;
                         overflow: hidden;
 
@@ -174,16 +173,16 @@
                     }
 
                     .right {
-                        width: calc(100% - 240px);
+                        width: calc(100% - 200px);
                         height: 100%;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-around;
-                        padding: 0 20px;
+                        padding-left: 20px;
                         box-sizing: border-box;
 
                         .line1 {
-                            font-size: 30px;
+                            font-size: 35px;
                             font-weight: 400;
                             color: #333333;
                             @include line-hidden(1);
@@ -200,8 +199,8 @@
                             font-weight: 400;
                             color: #333333;
                             @include line-hidden(2);
-                            margin-top: 35px;
-                            margin-bottom: 30px;
+                            margin: 20px 0 10px 0;
+
                         }
                     }
                 }

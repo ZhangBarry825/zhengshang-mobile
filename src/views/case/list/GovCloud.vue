@@ -44,7 +44,7 @@
         <div class="solution">
             <div class="title">行业解决方案</div>
             <div class="menus">
-                <van-tabs v-model="activeIndex">
+                <van-tabs v-model="activeIndex" :ellipsis="false">
                     <van-tab :title="item.title" :index="1111" v-for="(item,index) in tabList" :key="index"></van-tab>
                 </van-tabs>
             </div>
@@ -435,6 +435,7 @@
                             overflow: visible;
                             color: #ffffff;
                             opacity: .9;
+                            text-wrap: none;
                         }
 
                         .van-tab--active {
@@ -507,14 +508,14 @@
                         cursor: pointer;
 
                         .text {
-                            font-size: 18px;
+                            font-size: 24px;
                             font-weight: 400;
                             color: #024ce5;
                         }
 
                         img {
                             margin-left: 9px;
-                            width: 25px;
+                            width: 35px;
                         }
 
                         .blue {
@@ -718,7 +719,7 @@
                     @include back-img-center;
                     margin-bottom: 30px;
                     .back-gray {
-                        padding: 70px 43px;
+                        padding: 50px 43px;
                         box-sizing: border-box;
                         width: 100%;
                         height: 100%;
@@ -733,7 +734,7 @@
                             color: #fefefe;
                         }
                         .line2 {
-                            margin-top: 50px;
+                            margin-top: 30px;
                             font-size: 20px;
                             font-weight: 400;
                             color: #fefefe;

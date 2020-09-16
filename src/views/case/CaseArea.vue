@@ -263,7 +263,6 @@
                     }
                     .line3{
                         width:100%;
-                        height: 60px;
                         font-size: 24px;
                         font-weight: 400;
                         color: #9EAAC3;

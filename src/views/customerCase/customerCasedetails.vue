@@ -1,6 +1,6 @@
 <template>
   <div class="customerCasedetails">
-    <navigation :colour="true" :propD="true"></navigation>
+    <navigation :colour="true" ></navigation>
     <div class="listsdas">
       <img :src="dataDetail.info.content" alt />
     </div>
@@ -85,6 +85,7 @@ export default {
 
 <style lang='scss' scoped>
 .customerCasedetails {
+  padding-top: 128px;
   .listsdas {
     width: 100%;
     > img {
