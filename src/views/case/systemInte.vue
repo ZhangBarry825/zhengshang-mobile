@@ -11,7 +11,7 @@
     <div class="canBeDev">
       <h4>可开发行业</h4>
       <div class="list">
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry1.png" alt />
@@ -22,7 +22,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry2.png" alt />
@@ -33,7 +33,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry3.png" alt />
@@ -44,7 +44,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry4.png" alt />
@@ -55,7 +55,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry5.png" alt />
@@ -66,7 +66,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry6.png" alt />
@@ -77,7 +77,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry7.png" alt />
@@ -88,7 +88,7 @@
             <img src="../../assets/images/systemInte/jintou.png" alt />
           </div>
         </div>
-        <div class="item">
+        <div class="item" @click="openDialog">
           <div class="tuds">
             <p>
               <img src="../../assets/images/systemInte/industry8.png" alt />
@@ -379,6 +379,9 @@ export default {
   },
   //方法
   methods: {
+    openDialog() {
+      this.$dia()
+    },
   },
   //组件
   components: {

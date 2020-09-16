@@ -115,17 +115,17 @@
                 flex-direction: column;
                 justify-content: space-between;
                 .line1 {
-                    font-size: 16px;
+                    font-size: 25px;
                     font-weight: 400;
                     color: #999;
                 }
                 .line2 {
-                    font-size: 16px;
+                    font-size: 28px;
                     font-weight: 400;
                     color: #666;
                 }
                 .line3 {
-                    font-size: 14px;
+                    font-size: 20px;
                     font-weight: 400;
                     color: #9eaac3;
                 }

@@ -9,7 +9,7 @@
                         <div class="line2">
                             {{item.content}}
                         </div>
-                        <div class="line3">
+                        <div class="line3" @click="openDialog">
                             <div class="text">立即咨询</div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="text">{{item.title}}</div>
                     </div>
                     <div class="line2">{{item.remark}}</div>
-                    <div class="line3">
+                    <div class="line3" @click="openDialog">
                         <div class="text">了解更多</div>
                         <img src="../../../assets/images/more1.png" alt="">
                     </div>
@@ -256,7 +256,10 @@
                 let res =await getGovCloud()
                 console.log(res.data)
                 this.dataDetail=res.data
-            }
+            },
+            openDialog() {
+                this.$dia()
+            },
         },
         created() {
             this.fetchData()
@@ -504,14 +507,14 @@
                         cursor: pointer;
 
                         .text {
-                            font-size: 14px;
+                            font-size: 18px;
                             font-weight: 400;
                             color: #024ce5;
                         }
 
                         img {
                             margin-left: 9px;
-                            width: 40px;
+                            width: 25px;
                         }
 
                         .blue {
@@ -725,13 +728,13 @@
                         flex-direction: column;
                         align-items: center;
                         .line1 {
-                            font-size: 24px;
+                            font-size: 30px;
                             font-weight: 400;
                             color: #fefefe;
                         }
                         .line2 {
                             margin-top: 50px;
-                            font-size: 16px;
+                            font-size: 20px;
                             font-weight: 400;
                             color: #fefefe;
                             line-height: 1.5;
@@ -743,7 +746,6 @@
             .more {
                 width: 212px;
                 height: 80px;
-                border: 2px solid #004CE5;
                 margin: 0 auto;
                 margin-top: 50px;
                 margin-bottom: 30px;
@@ -754,14 +756,14 @@
                 cursor: pointer;
                 .text {
                     transition: all .5s;
-                    font-size: 16px;
+                    font-size: 25px;
                     font-weight: 400;
                     color: #004ce5;
                 }
                 img {
                     transition: all .5s;
                     margin-left: 10px;
-                    width: 26px;
+                    width: 30px;
                     height: 9px;
                 }
                 .more1{

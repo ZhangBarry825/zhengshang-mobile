@@ -10,43 +10,43 @@
             <div class="items">
                 <van-grid square :border="false" :column-num="4" border>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy1.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy1.png')"/>
                         <div class="text">移动社交</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy2.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy2.png')"/>
                         <div class="text">视频直播</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy3.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy3.png')"/>
                         <div class="text">线上教育</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy4.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy4.png')"/>
                         <div class="text">智慧医疗</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy5.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy5.png')"/>
                         <div class="text">智慧健身</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy6.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy6.png')"/>
                         <div class="text">移动商城</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy7.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy7.png')"/>
                         <div class="text">智慧外卖</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy8.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy8.png')"/>
                         <div class="text">跑腿外送</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy9.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy9.png')"/>
                         <div class="text">移动交友</div>
                     </van-grid-item>
                     <van-grid-item>
-                        <van-image style="width: 70%" :src="require('../../../assets/images/hy10.png')"/>
+                        <van-image style="width: 50%" :src="require('../../../assets/images/hy10.png')"/>
                         <div class="text">其它行业</div>
                     </van-grid-item>
 

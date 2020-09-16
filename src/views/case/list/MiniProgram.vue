@@ -14,7 +14,7 @@
                         <div class="line1">{{item.title}}</div>
                         <div class="line2">{{item.context}}</div>
                     </div>
-                    <div class="more">
+                    <div class="more" @click="openDialog">
                         <div class="text">了解更多</div>
                         <img class="more1" src="../../../assets/images/more1.png" alt/>
                         <img class="more0" src="../../../assets/images/more0.png" alt/>
@@ -445,7 +445,9 @@
             selectChange(index){
                 this.selectedIndex=index
             },
-
+            openDialog() {
+                this.$dia()
+            },
 
         }
     }
@@ -549,7 +551,7 @@
 
                         .text {
                             transition: all .5s;
-                            font-size: 16px;
+                            font-size: 22px;
                             font-weight: 400;
                             color: #004ce5;
                         }
@@ -557,8 +559,7 @@
                         img {
                             transition: all .5s;
                             margin-left: 10px;
-                            width: 38px;
-                            height: 17px;
+                            width: 30px;
                         }
 
                         .more1 {
