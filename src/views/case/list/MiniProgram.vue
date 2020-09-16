@@ -677,14 +677,13 @@
                 margin-top: 30px;
                 width: 696px;
                 height: 795px;
-                display: flex;
-                flex-direction: column;
                 background-color: #eef1f7;
                 padding: 50px 0;
                 box-sizing: border-box;
-                overflow-y: scroll;
+                overflow: scroll;
                 .item{
-                    margin-bottom: 60px;
+                    height: 120px;
+                    margin-bottom: 50px;
                     border-left: 6px solid rgba(0,0,0,0);
                     width: 100%;
                     display: flex;
@@ -708,7 +707,7 @@
                             color: #343434;
                         }
                         .line2{
-                            margin-top: 30px;
+                            margin-top: 10px;
                             font-size: 26px;
                             font-weight: 400;
                             color: #9EAAC4;

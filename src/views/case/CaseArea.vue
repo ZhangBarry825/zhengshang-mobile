@@ -8,7 +8,7 @@
         <div class="items">
             <div class="item item1">
                 <div class="image">
-                    <img class="active-bottom" :src="dataDetail.datalist[0].img" alt="">
+                    <van-image fit="cover" style="width: 80%" class="active-bottom" :src="dataDetail.datalist[0].img" alt="" />
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[0].title}}</div>
@@ -23,7 +23,7 @@
             </div>
             <div class="item item2">
                 <div class="image">
-                    <img class="active-bottom" :src="dataDetail.datalist[1].img" alt="">
+                    <van-image fit="cover" style="width: 80%" class="active-bottom" :src="dataDetail.datalist[1].img" alt=""/>
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[1].title}}</div>
@@ -38,7 +38,7 @@
             </div>
             <div class="item item3">
                 <div class="image">
-                    <img class="active-bottom" :src="dataDetail.datalist[2].img" alt="">
+                    <van-image fit="cover" style="width: 80%" class="active-bottom" :src="dataDetail.datalist[2].img" alt=""/>
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[2].title}}</div>
@@ -53,7 +53,7 @@
             </div>
             <div class="item item4">
                 <div class="image">
-                    <img class="active-bottom" :src="dataDetail.datalist[3].img" alt="">
+                    <van-image fit="cover" style="width: 80%" class="active-bottom" :src="dataDetail.datalist[3].img" alt=""/>
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[3].title}}</div>
@@ -68,7 +68,7 @@
             </div>
             <div class="item item5">
                 <div class="image">
-                    <img class="active-bottom" :src="dataDetail.datalist[4].img" alt="">
+                    <van-image fit="cover" style="width: 80%" class="active-bottom" :src="dataDetail.datalist[4].img" alt=""/>
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[4].title}}</div>
@@ -83,7 +83,7 @@
             </div>
             <div class="item item6">
                 <div class="image">
-                    <img class="active-bottom" :src="dataDetail.datalist[5].img" alt="">
+                    <van-image fit="cover" style="width: 80%" class="active-bottom" :src="dataDetail.datalist[5].img" alt=""/>
                 </div>
                 <div class="title">
                     <div class="line1">{{dataDetail.datalist[5].title}}</div>
