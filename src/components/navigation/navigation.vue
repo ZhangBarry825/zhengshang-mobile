@@ -385,12 +385,12 @@
         //生命周期函数
         created() {
             this.coloura = this.colour
-            console.log(this.colour)
+            //console.log(this.colour)
         },
         //方法
         methods: {
             jumpLink(Link) {
-                console.log(Link)
+                //console.log(Link)
                 if (Link == this.$router.history.current.fullPath) {
                     this.unfold = !this.unfold
                     return
@@ -408,7 +408,7 @@
                 this.unfold = !this.unfold
             },
             jumpTitle(Link) {
-                console.log(Link)
+                //console.log(Link)
                 if (Link == this.$router.history.current.fullPath) {
                     this.unfold = !this.unfold
                     return
@@ -422,7 +422,7 @@
                 this.titds = e
             },
             changegg(e) {
-                console.log(e)
+                //console.log(e)
                 this.titdsid = e
             },
             handleScroll() {
