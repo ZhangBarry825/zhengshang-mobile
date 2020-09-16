@@ -341,7 +341,7 @@ export default {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 130px;
+            padding-top: 30%;
 
             .line1 {
               font-size: 30px;
@@ -805,7 +805,7 @@ export default {
       flex-wrap: wrap;
       padding-bottom: 30px;
       .item {
-        width: 226px;
+        width: calc(33.3% - 5px);
         height: 140px;
         background: #ffffff;
         border: 1px solid #dce8fe;

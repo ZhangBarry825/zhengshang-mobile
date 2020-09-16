@@ -80,21 +80,27 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
 
 router.beforeEach((to, from, next) => {
-  window.scrollTo(0,0)
-
-  if(routes.find((val)=>{
-    return val.path == to.path
-  })){
-    next()
+  const isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+  if(isMobile){
+    window.scrollTo(0,0)
+    if(routes.find((val)=>{
+      return val.path == to.path
+    })){
+      next()
+    }else {
+      next('/')
+    }
   }else {
-    next('/')
+    window.location.href="http://www.zhengshangwl.com";
   }
+
+
 })
 
 export default router

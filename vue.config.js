@@ -2,6 +2,7 @@ const siteTitle='正尚网络科技'
 
 
 module.exports = {
+    publicPath: './',
     chainWebpack: config => {
         const oneOfsMap = config.module.rule('scss').oneOfs.store
         oneOfsMap.forEach(item => {
