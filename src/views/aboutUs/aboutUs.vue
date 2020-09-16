@@ -13,19 +13,46 @@
         <p>
           <img src="../../assets/images/aboutUs/team1.png" alt />
         </p>
-        <p>{{dataDetail.config.first}}年项目经验</p>
+        <p>
+          <animate-number
+                  from="1"
+                  :to="dataDetail.config.first"
+                  duration="1500"
+                  easing="easeOutQuad"
+                  :key="dataDetail.config.first"
+                  ref="myNum0">
+          </animate-number>
+          年项目经验</p>
       </div>
       <div>
         <p>
           <img src="../../assets/images/aboutUs/team2.png" alt />
         </p>
-        <p>{{dataDetail.config.second}}人技术团队</p>
+        <p>
+          <animate-number
+                  from="1"
+                  :to="dataDetail.config.second"
+                  :key="dataDetail.config.second"
+                  duration="1500"
+                  easing="easeOutQuad"
+                  ref="myNum0">
+          </animate-number>
+          人技术团队</p>
       </div>
       <div>
         <p>
           <img src="../../assets/images/aboutUs/team3.png" alt />
         </p>
-        <p>{{dataDetail.config.third}}+合作客户</p>
+        <p>
+          <animate-number
+                  from="1"
+                  :to="dataDetail.config.third"
+                  :key="dataDetail.config.third"
+                  duration="1500"
+                  easing="easeOutQuad"
+                  ref="myNum0">
+          </animate-number>
+          +合作客户</p>
       </div>
     </div>
     <div class="introduction">
@@ -33,7 +60,7 @@
       <div class="text">
         <div>
           <p>
-            <img src="../../assets/images/aboutUs/uction.png" alt />
+            <img class="active-original" src="../../assets/images/aboutUs/uction.png" alt />
           </p>
           <p>{{dataDetail.aboutus.content.slice(0,47)}}</p>
         </div>
@@ -46,45 +73,45 @@
       <h4>经营理念</h4>
       <div class="Philosophy">
         <div class="item">
-          <div>
+          <div class="active-left">
             <p>
               <img class="firstClass1" src="../../assets/images/aboutUs/firstClass1.png" alt />
             </p>
           </div>
-          <div>
+          <div class="active-right">
             <p>{{dataDetail.idea[0].key}}</p>
             <p>{{dataDetail.idea[0].value}}</p>
           </div>
         </div>
         <div class="item">
-          <div>
+          <div class="active-left">
             <p>
               <img class="firstClass2" src="../../assets/images/aboutUs/firstClass2.png" alt />
             </p>
           </div>
-          <div>
+          <div class="active-right">
             <p>{{dataDetail.idea[1].key}}</p>
             <p>{{dataDetail.idea[1].value}}</p>
           </div>
         </div>
         <div class="item">
-          <div>
+          <div class="active-left">
             <p>
               <img class="firstClass3" src="../../assets/images/aboutUs/firstClass3.png" alt />
             </p>
           </div>
-          <div>
+          <div class="active-right">
             <p>{{dataDetail.idea[2].key}}</p>
             <p>{{dataDetail.idea[2].value}}</p>
           </div>
         </div>
         <div class="item">
-          <div>
+          <div class="active-left">
             <p>
               <img class="firstClass4" src="../../assets/images/aboutUs/firstClass4.png" alt />
             </p>
           </div>
-          <div>
+          <div class="active-right">
             <p>{{dataDetail.idea[3].key}}</p>
             <p>{{dataDetail.idea[3].value}}</p>
           </div>
@@ -174,11 +201,23 @@ export default {
   },
   //方法
   methods: {
-    async fetchData(){
-      let res= await getAboutUs()
-      console.log(res.data)
-      this.dataDetail=res.data
+    fetchData(){
+      let that = this
+      getAboutUs().then((res)=>{
+        res.data.config.first=parseInt(res.data.config.first)
+        res.data.config.second=parseInt(res.data.config.second)
+        res.data.config.third=parseInt(res.data.config.third)
+        that.dataDetail=res.data
+        that.$refs.myNum0.start()
+      })
     }
+  },
+  mounted() {
+    let that = this
+    that.$ami('.active-left', 300, 'left', '100%', .5, true)
+    that.$ami('.active-right', 300, 'right', '100%', .5, true)
+    that.$ami('.active-original', 300, 'bottom', '30%', .5, true)
+
   },
   //组件
   components: {
