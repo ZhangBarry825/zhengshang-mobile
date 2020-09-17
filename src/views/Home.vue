@@ -111,6 +111,10 @@
           <img src="../assets/images/adv8.png" alt />
           <div class="text">众多行业开发经验</div>
         </div>
+        <div class="item active-advantage8">
+          <img src="../assets/images/adv9.png" alt />
+          <div class="text">丰富的案例</div>
+        </div>
       </div>
     </div>
     <div class="customer">
@@ -193,6 +197,7 @@
       <div class="items">
         <div
           class="item"
+          v-if="index<12"
           v-for="(item,index) in partner"
           :class="'item active-partner'+index"
           :style="'background-image: url('+item.img+')'"
